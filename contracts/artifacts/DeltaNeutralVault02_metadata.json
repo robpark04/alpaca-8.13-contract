@@ -1,0 +1,1621 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_BadActionSize",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_BadReinvestPath",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_ExceedCredit",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_IncorrectNativeAmountDeposit",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requiredAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_receivedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "DeltaNeutralVault_InsufficientShareReceived",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_requiredAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_receivedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "DeltaNeutralVault_InsufficientTokenReceived",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_InvalidInitializedAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_InvalidLpToken",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_vault",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_positionId",
+						"type": "uint256"
+					}
+				],
+				"name": "DeltaNeutralVault_InvalidPositions",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_InvalidShareAmount",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_PositionValueExceedLimit",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_PositionsAlreadyInitialized",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_PositionsIsHealthy",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_PositionsNotInitialized",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_UnTrustedPrice",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					}
+				],
+				"name": "DeltaNeutralVault_Unauthorized",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_UnsafeDebtRatio",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_UnsafeDebtValue",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amountBefore",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amountAfter",
+						"type": "uint256"
+					}
+				],
+				"name": "DeltaNeutralVault_UnsafeOutstanding",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_UnsafePositionEquity",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DeltaNeutralVault_UnsafePositionValue",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_decimals",
+						"type": "uint256"
+					}
+				],
+				"name": "DeltaNeutralVault_UnsupportedDecimals",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_withdrawValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_shareValue",
+						"type": "uint256"
+					}
+				],
+				"name": "DeltaNeutralVault_WithdrawValueExceedShareValue",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "version",
+						"type": "uint8"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_shareReceiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_shares",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_stableTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_assetTokenAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "LogDeposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_stableVaultPosId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_assetVaultPosId",
+						"type": "uint256"
+					}
+				],
+				"name": "LogInitializePositions",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_equityBefore",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_equityAfter",
+						"type": "uint256"
+					}
+				],
+				"name": "LogRebalance",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_equityBefore",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_equityAfter",
+						"type": "uint256"
+					}
+				],
+				"name": "LogReinvest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_priceOracle",
+						"type": "address"
+					}
+				],
+				"name": "LogSetDeltaNeutralOracle",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_config",
+						"type": "address"
+					}
+				],
+				"name": "LogSetDeltaNeutralVaultConfig",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_shareOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_minStableTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_minAssetTokenAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "LogWithdraw",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "alpacaToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assetTo18ConversionFactor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assetToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assetVault",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assetVaultPosId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assetVaultWorker",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "config",
+				"outputs": [
+					{
+						"internalType": "contract IDeltaNeutralVaultConfig02",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "subtractedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_stableTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_assetTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_shareReceiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minShareReceive",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "deposit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "addedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_stableTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_assetTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minShareReceive",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "initPositions",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_stableVault",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_assetVault",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_stableVaultWorker",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_assetVaultWorker",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_lpToken",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_alpacaToken",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IDeltaNeutralOracle",
+						"name": "_priceOracle",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IDeltaNeutralVaultConfig02",
+						"name": "_config",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastFeeCollected",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pendingManagementFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "positionInfo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "stablePositionEquity",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "stablePositionDebtValue",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "stableLpAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetPositionEquity",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetPositionDebtValue",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetLpAmount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct DeltaNeutralVault02.PositionInfo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "priceOracle",
+				"outputs": [
+					{
+						"internalType": "contract IDeltaNeutralOracle",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8[]",
+						"name": "_actions",
+						"type": "uint8[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "_datas",
+						"type": "bytes[]"
+					}
+				],
+				"name": "rebalance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8[]",
+						"name": "_actions",
+						"type": "uint8[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "_datas",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minTokenReceive",
+						"type": "uint256"
+					}
+				],
+				"name": "reinvest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IDeltaNeutralOracle",
+						"name": "_newPriceOracle",
+						"type": "address"
+					}
+				],
+				"name": "setDeltaNeutralOracle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IDeltaNeutralVaultConfig02",
+						"name": "_newVaultConfig",
+						"type": "address"
+					}
+				],
+				"name": "setDeltaNeutralVaultConfig",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_shareAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "shareToValue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stableTo18ConversionFactor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stableToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stableVault",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stableVaultPosId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stableVaultWorker",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalEquityValue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "valueToShare",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_shareAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minStableTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minAssetTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"allowance(address,address)": {
+					"details": "See {IERC20-allowance}."
+				},
+				"approve(address,uint256)": {
+					"details": "See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC20-balanceOf}."
+				},
+				"decimals()": {
+					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the value {ERC20} uses, unless this function is overridden; NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
+				},
+				"decreaseAllowance(address,uint256)": {
+					"details": "Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
+				},
+				"deposit(uint256,uint256,address,uint256,bytes)": {
+					"params": {
+						"_assetTokenAmount": "Amount of asset token transfer to vault.",
+						"_data": "The calldata to pass along to the proxy action for more working context.",
+						"_minShareReceive": "Minimum share that _shareReceiver must receive.",
+						"_shareReceiver": "Addresses to be receive share.",
+						"_stableTokenAmount": "Amount of stable token transfer to vault."
+					}
+				},
+				"increaseAllowance(address,uint256)": {
+					"details": "Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address."
+				},
+				"initPositions(uint256,uint256,uint256,bytes)": {
+					"params": {
+						"_assetTokenAmount": "Amount of asset token transfer to vault.",
+						"_data": "The calldata to pass along to the proxy action for more working context.",
+						"_minShareReceive": "Minimum share that _shareReceiver must receive.",
+						"_stableTokenAmount": "Amount of stable token transfer to vault."
+					}
+				},
+				"initialize(string,string,address,address,address,address,address,address,address,address)": {
+					"params": {
+						"_alpacaToken": "Alpaca token address.",
+						"_assetVault": "Address of asset vault.",
+						"_config": "The address of delta neutral vault config.",
+						"_lpToken": "Address stable and asset token pair.",
+						"_name": "Name.",
+						"_priceOracle": "DeltaNeutralOracle address.",
+						"_stableVault": "Address of stable vault.",
+						"_stableVaultWorker": "Address of asset worker.",
+						"_symbol": "Symbol."
+					}
+				},
+				"name()": {
+					"details": "Returns the name of the token."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"rebalance(uint8[],uint256[],bytes[])": {
+					"params": {
+						"_actions": "List of actions to execute.",
+						"_datas": "The calldata to pass along for more working context.",
+						"_values": "Native token amount."
+					}
+				},
+				"reinvest(uint8[],uint256[],bytes[],uint256)": {
+					"params": {
+						"_actions": "List of actions to execute.",
+						"_datas": "The calldata to pass along for more working context.",
+						"_minTokenReceive": "Minimum token received when swap reward.",
+						"_values": "Native token amount."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setDeltaNeutralOracle(address)": {
+					"params": {
+						"_newPriceOracle": "New deltaNeutralOracle address."
+					}
+				},
+				"setDeltaNeutralVaultConfig(address)": {
+					"params": {
+						"_newVaultConfig": "New deltaNeutralOracle address."
+					}
+				},
+				"shareToValue(uint256)": {
+					"params": {
+						"_shareAmount": "Amount of share."
+					}
+				},
+				"symbol()": {
+					"details": "Returns the symbol of the token, usually a shorter version of the name."
+				},
+				"totalSupply()": {
+					"details": "See {IERC20-totalSupply}."
+				},
+				"transfer(address,uint256)": {
+					"details": "See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"valueToShare(uint256)": {
+					"params": {
+						"_value": "value in usd."
+					}
+				},
+				"withdraw(uint256,uint256,uint256,bytes)": {
+					"params": {
+						"_data": "The calldata to pass along to the proxy action for more working context.",
+						"_minAssetTokenAmount": "Minimum asset token shareOwner expect to receive.",
+						"_minStableTokenAmount": "Minimum stable token shareOwner expect to receive.",
+						"_shareAmount": "Amount of share to withdraw from vault."
+					}
+				}
+			},
+			"title": "DeltaNeutralVault02 is designed to take a long and short position in an asset at the same time to cancel out the effect on the out-standing portfolio when the asset’s price moves. Moreover, DeltaNeutralVault02 support credit-dependent limit access",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deposit(uint256,uint256,address,uint256,bytes)": {
+					"notice": "Deposit to delta neutral vault."
+				},
+				"initPositions(uint256,uint256,uint256,bytes)": {
+					"notice": "initialize delta neutral vault positions."
+				},
+				"initialize(string,string,address,address,address,address,address,address,address,address)": {
+					"notice": "Initialize Delta Neutral vault."
+				},
+				"pendingManagementFee()": {
+					"notice": "Return amount of share pending for minting as a form of management fee"
+				},
+				"positionInfo()": {
+					"notice": "Return equity and debt value in usd of stable and asset positions."
+				},
+				"rebalance(uint8[],uint256[],bytes[])": {
+					"notice": "Rebalance stable and asset positions."
+				},
+				"reinvest(uint8[],uint256[],bytes[],uint256)": {
+					"notice": "Reinvest fund to stable and asset positions."
+				},
+				"setDeltaNeutralOracle(address)": {
+					"notice": "Set new DeltaNeutralOracle."
+				},
+				"setDeltaNeutralVaultConfig(address)": {
+					"notice": "Set new DeltaNeutralVaultConfig."
+				},
+				"shareToValue(uint256)": {
+					"notice": "Return the value of share from the given share amount."
+				},
+				"totalEquityValue()": {
+					"notice": "Return equity value of delta neutral position."
+				},
+				"valueToShare(uint256)": {
+					"notice": "Return the amount of share from the given value."
+				},
+				"withdraw(uint256,uint256,uint256,bytes)": {
+					"notice": "Withdraw from delta neutral vault."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/DeltaNeutralVault02.sol": "DeltaNeutralVault02"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol": {
+			"keccak256": "0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://98c7bba29bcab7240cdaada7dd7cbe3529fec83314801270c46239e72a9e84d7",
+				"dweb:/ipfs/QmfHCc1KMygjXchXVwafWTkFjhbb2SQ3Cu5GzRTdV4CCCh"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6ec10894beb0f7537fba35e501fd1c5d35440e8c8f5ced1b8e57722a1d0879a8",
+				"dweb:/ipfs/Qmbc3bNmtDewTGSmrPD93Ubp8saAz8xCxsgTjSmpNTqukz"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol": {
+			"keccak256": "0x8cc03c5ac17e8a7396e487cda41fc1f1dfdb91db7d528e6da84bee3b6dd7e167",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://607818f1b44548c2d8268176f73cdb290e1faed971b1061930d92698366e2a11",
+				"dweb:/ipfs/QmQibMe3r5no95b6q7isGT5R75V8xSofWEDLXzp95b7LgZ"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol": {
+			"keccak256": "0xb71b875e7f1b8ad082eb6ff83bca4bfa7d050476cc98fd39295826b654edfb46",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bcec0617473fa22a0866d7daf25bf4d664a62902e49c4a158aef54c1e4348e8a",
+				"dweb:/ipfs/QmPQetTKnLJBAQQrLKUWGVZwfp3VGmBhnqqJvmJTycM1jR"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol": {
+			"keccak256": "0x4e733d3164f73f461eaf9d8087a7ad1ea180bdc8ba0d3d61b0e1ae16d8e63dff",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://75b47c3aeca7b66ea6752f8be020ec5c1c502de6ec9065272dae23d3a52196e2",
+				"dweb:/ipfs/QmUebPMHv16tYKFh5BmBQkMfRFb5b8UZ2RgVwdjxCeufVF"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/extensions/IERC20MetadataUpgradeable.sol": {
+			"keccak256": "0x605434219ebbe4653f703640f06969faa5a1d78f0bfef878e5ddbb1ca369ceeb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c9c634f99dd02d73ce7498b03a6305e251c05eeebb71457306561c1fab0fa7d",
+				"dweb:/ipfs/QmbYRBbZHy8YoaQKXdPryiL3CSS7uUaRfRYi1TUj9cTqJQ"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol": {
+			"keccak256": "0x3e26a49d2fa5ef8338b8a9467c91e54f417cb07e849b1cc0f4ebc4d2a147938e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ca7bd5deecc4abd97f0218708c6e004953971cc62de68557fe0c6c8607f85a65",
+				"dweb:/ipfs/QmRw3dGdS6ksHZiqcPRknYvWXfYP2hTj21PhkLjXyEVEf6"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37e4df53c8d2e3c1062c1c7b2c17366db7de03bfd2559d340ca95c588aa49c2f",
+				"dweb:/ipfs/QmQ9vsG3o4wED3FRogiSUhdzJvZSjjYFtydzXvFEJtgZk4"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c",
+				"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a"
+			]
+		},
+		"contracts/DeltaNeutralVault02.sol": {
+			"keccak256": "0x123fb9907d6cca7495ef9acffff22084db6943bc5b103c5d19a03147e033c131",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://68713f75813f5c8c3e480d07cda293518af478465fc22f0ed149052f4b921c89",
+				"dweb:/ipfs/QmSGcVediKnwkqvnYBAXxHTQKHMnSQzyDBsrWo6cEJHs6a"
+			]
+		},
+		"contracts/interfaces/IController.sol": {
+			"keccak256": "0xdcd8f39506df604368de782ed7ecad1fcadd8523f76c2e8cca58b1dd21eabd5f",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://5fe146acbff19195b5bb5233de9474e9ba54fc67072c96b860f806c38068d53d",
+				"dweb:/ipfs/QmcRdVgR3xPHzxntZw7wFTYoJS2Gtv8jHM3t4j5AYvMXkh"
+			]
+		},
+		"contracts/interfaces/IDeltaNeutralOracle.sol": {
+			"keccak256": "0xd99e51c833f7e1c963e65c036ac7a13d4cf75ef1b66960b6efd7e0d66c9c5350",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://c19a7cec3e944ca111f9c9fb8ca4a270b8c3c6f0752839b6d740591eb503e73f",
+				"dweb:/ipfs/QmYU9yMZZgRKy1cRQKhGnqBjBgFYfGR2m2VjPGNwLruJQ6"
+			]
+		},
+		"contracts/interfaces/IDeltaNeutralVaultConfig02.sol": {
+			"keccak256": "0x14fc39a7a0d75c584d2a6f50ae5a084dd84d30b988b5c288c6b99a543a444638",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://c58bd273ec39a7e7f809f4ecdce1e67e70093c01819d1c7453539cc6b60bf86f",
+				"dweb:/ipfs/QmQ47QM9tMnhmFXsVLuZvvd1bb7MRYKgHjRyKxwCQK4s8m"
+			]
+		},
+		"contracts/interfaces/IFairLaunch.sol": {
+			"keccak256": "0xc85e95f6601056e7186114dff4841986a59427157dd66b4c144a2f6ba9e966e4",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://3f602a674f7ca6c38153aabab5dd5cbca95fae2aab9eb6020e54952fb7d6d868",
+				"dweb:/ipfs/QmTK8FHvi4cn2r6jgUbdaSLriw8TvEUHGyLAmchXspCB8b"
+			]
+		},
+		"contracts/interfaces/IPancakePair.sol": {
+			"keccak256": "0xc58a6c837d5464a30639690b3ccb55ba9ccaf2749d3cea3941a4c73de4b4019f",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://de9dd3e39c8a111b153a89b762ba71bbbe672a60fe7a2ad7c84b1d8e0b31d71d",
+				"dweb:/ipfs/QmZrG3JtQqT6hkuKhii76v5ZX7bMpuEPPWcuwgXs9xsNpu"
+			]
+		},
+		"contracts/interfaces/ISwapRouter.sol": {
+			"keccak256": "0x06bd4616d31048a62a78bb94820171c626638ecadb7d431cc3bcf5992ea4f61a",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://41378f35b6547d31995b1ffd117098c55c92e62b9616e0066aa2670bf13f84fd",
+				"dweb:/ipfs/QmPE3r4LTuBJ3spuwzVrvGV74dXiJgmMttWTueEPqBVY3D"
+			]
+		},
+		"contracts/interfaces/IVault.sol": {
+			"keccak256": "0x63a3b5b6a300eb68e2504824e5eaa91cadcc90c04471210d97a9974b9da16ae9",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://8020a120c7f75e6befb4cedbce1372b0363edc4fb68c059bc78770709f957666",
+				"dweb:/ipfs/QmVAWooyQ9RKkWFVE4AA62uvqw36eqW3wv4qvqC6to3qjn"
+			]
+		},
+		"contracts/interfaces/IWETH.sol": {
+			"keccak256": "0xf6f0d773353ad019e9cade93019a57b75479ef50d1c2bec7f86e9c5b311f4157",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://7f1a36e80ea054144338d871875f7e15de2fbf578a13eb619925f73097da5f97",
+				"dweb:/ipfs/QmcyKiDahPLTzK1ui7RgDuDovfBR9Fz7RL8Km3iyu1uDep"
+			]
+		},
+		"contracts/interfaces/IWNativeRelayer.sol": {
+			"keccak256": "0xd2af9619fd21804ca6fae2492472a758517074be5298992cc398ac709a95b5c0",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://3677afb4d60c9d532f55576b19f8bb04e4fda5e2818fc6141005d2f657289485",
+				"dweb:/ipfs/QmSfY1iCH9LwKf5BqAbwZNaRJQiLgYQDc3JchVsStU6F9a"
+			]
+		},
+		"contracts/interfaces/IWorker.sol": {
+			"keccak256": "0xb95da733a39f717e7ab533f26d599927d3199f1df4508efbbe98e121d2390fda",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://913a4af333aaa31ecc5c2094fe511dc786b4dc31b1744ddbed3126c9e4f10025",
+				"dweb:/ipfs/QmZfgjyU1xShhkdGUUKac7LL118n16jW4pFEQ5HqjnPEJf"
+			]
+		},
+		"contracts/interfaces/IWorker02.sol": {
+			"keccak256": "0x46d3f50f51cceaa7e1905d8066c3c0f0f738ad155c6bb52a974c1c4884902ea3",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://91d1bd7a1290f9334e60bc6f0b6b880354a83e862acfac9a4d60cefa82672c81",
+				"dweb:/ipfs/QmQCxxTGWCNoWkPTekoBnN5RrZ4pamGByxEdL85pDKnH2i"
+			]
+		},
+		"contracts/utils/FixedPointMathLib.sol": {
+			"keccak256": "0x3ccfb8231b91a7d5e2eecd7178c75ab464b8deea14d786cf51435e33849541e7",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://07074d799dd2ca7aa1f202509870e44e16ad560b2e8917e789747d1b6e69bbc5",
+				"dweb:/ipfs/QmQxnBYbJ1dy5futH8fS37iyMhX95bNuPkdCT1cgHDEd3H"
+			]
+		},
+		"contracts/utils/FullMath.sol": {
+			"keccak256": "0x659cb906ac3a8986324ba78c7f2c4c3810c96473023d4c4144431c0a1f68df77",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e1a97e247f24b90275bb40a89030889b9740bba55b818cd9c19e4bbc1f51f1ef",
+				"dweb:/ipfs/QmPR2KuReqnPS4t7YEfBdhDJBEdkYSTwVHpJUrGA5nsfpd"
+			]
+		},
+		"contracts/utils/Math.sol": {
+			"keccak256": "0xa3f197ce3de1ef0be10271721d383c8eaa1a12f246c268ad5324d7c569dffa89",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://fb2c468889fc924d19cf6af06e95c05ce496dc91332ad89039053775eb67011a",
+				"dweb:/ipfs/QmcaLTYDsSHuR1sZQz97yakgUbd9TAKoQ7ECKGqDosvdXr"
+			]
+		},
+		"contracts/utils/SafeToken.sol": {
+			"keccak256": "0x9fcc528b620bf1812a1fcaabff42e8f0a7713c01a2e1c9cec4e19706b5f40fce",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://732fd010171def5d9a64ae9a8a8e8e62de767e822c0f6e27093d8ae92fb51e26",
+				"dweb:/ipfs/QmVDFpPhNHJSq4V7XsLEayz9Fs2pmK8oGzF7rf7yWW1CsB"
+			]
+		}
+	},
+	"version": 1
+}

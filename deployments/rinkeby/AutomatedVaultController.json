@@ -1,0 +1,616 @@
+{
+  "address": "0x818f926Ee15aC6c1745C09B59BdB192212581A9F",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract ICreditor[]",
+          "name": "_creditors",
+          "type": "address[]"
+        }
+      ],
+      "name": "LogSetCreditors",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract IDeltaNeutralVault[]",
+          "name": "_vaults",
+          "type": "address[]"
+        }
+      ],
+      "name": "LogSetPrivateVaults",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "availableCredit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "creditors",
+      "outputs": [
+        {
+          "internalType": "contract ICreditor",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_vault",
+          "type": "address"
+        }
+      ],
+      "name": "getUserVaultShares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICreditor[]",
+          "name": "_creditors",
+          "type": "address[]"
+        },
+        {
+          "internalType": "contract IDeltaNeutralVault[]",
+          "name": "_privateVaults",
+          "type": "address[]"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_shareAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "onDeposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_shareAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "onWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "privateVaults",
+      "outputs": [
+        {
+          "internalType": "contract IDeltaNeutralVault",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICreditor[]",
+          "name": "_newCreditors",
+          "type": "address[]"
+        }
+      ],
+      "name": "setCreditors",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IDeltaNeutralVault[]",
+          "name": "_newPrivateVaults",
+          "type": "address[]"
+        }
+      ],
+      "name": "setPrivateVaults",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "totalCredit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "usedCredit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "userVaultShares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x99d456c8fcdbc05a6d93cfe43c04c1d1867e54be1058a1c4b3787716c825719c",
+  "receipt": {
+    "to": null,
+    "from": "0x3A54802752fEFDc1aF2CD0b6DFA4F24694bDEE33",
+    "contractAddress": "0x818f926Ee15aC6c1745C09B59BdB192212581A9F",
+    "transactionIndex": 9,
+    "gasUsed": "1087341",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000040000000000000000000080000000000000000000000000000000000000000000000000000000000000020000000000000000",
+    "blockHash": "0xa6a34b599654a4c0b105c3364aec3be82986d2e73d6f3ecfd9a42ac249d4a22a",
+    "transactionHash": "0x99d456c8fcdbc05a6d93cfe43c04c1d1867e54be1058a1c4b3787716c825719c",
+    "logs": [
+      {
+        "transactionIndex": 9,
+        "blockNumber": 10773263,
+        "transactionHash": "0x99d456c8fcdbc05a6d93cfe43c04c1d1867e54be1058a1c4b3787716c825719c",
+        "address": "0x818f926Ee15aC6c1745C09B59BdB192212581A9F",
+        "topics": [
+          "0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "logIndex": 19,
+        "blockHash": "0xa6a34b599654a4c0b105c3364aec3be82986d2e73d6f3ecfd9a42ac249d4a22a"
+      }
+    ],
+    "blockNumber": 10773263,
+    "cumulativeGasUsed": "10512743",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "80c1d8b85362075366e47aa320ad0d03",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"contract ICreditor[]\",\"name\":\"_creditors\",\"type\":\"address[]\"}],\"name\":\"LogSetCreditors\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"contract IDeltaNeutralVault[]\",\"name\":\"_vaults\",\"type\":\"address[]\"}],\"name\":\"LogSetPrivateVaults\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"availableCredit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"creditors\",\"outputs\":[{\"internalType\":\"contract ICreditor\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_vault\",\"type\":\"address\"}],\"name\":\"getUserVaultShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ICreditor[]\",\"name\":\"_creditors\",\"type\":\"address[]\"},{\"internalType\":\"contract IDeltaNeutralVault[]\",\"name\":\"_privateVaults\",\"type\":\"address[]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_shareAmount\",\"type\":\"uint256\"}],\"name\":\"onDeposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_shareAmount\",\"type\":\"uint256\"}],\"name\":\"onWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"privateVaults\",\"outputs\":[{\"internalType\":\"contract IDeltaNeutralVault\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ICreditor[]\",\"name\":\"_newCreditors\",\"type\":\"address[]\"}],\"name\":\"setCreditors\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IDeltaNeutralVault[]\",\"name\":\"_newPrivateVaults\",\"type\":\"address[]\"}],\"name\":\"setPrivateVaults\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"totalCredit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"usedCredit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userVaultShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"availableCredit(address)\":{\"params\":{\"_user\":\"address of user.\"},\"returns\":{\"_0\":\"_total remaining credit of this user\"}},\"getUserVaultShares(address,address)\":{\"params\":{\"_user\":\"share owner\",\"_vault\":\"delta vault\"}},\"initialize(address[],address[])\":{\"params\":{\"_creditors\":\"list of credit sources\",\"_privateVaults\":\"list of private automated vaults\"}},\"onDeposit(address,uint256)\":{\"params\":{\"_shareAmount\":\"amount of automated vault's share\",\"_user\":\"share owner\"}},\"onWithdraw(address,uint256)\":{\"params\":{\"_shareAmount\":\"amount of automated vault's share withdrawn\",\"_user\":\"share owner\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"setCreditors(address[])\":{\"params\":{\"_newCreditors\":\"list of credit sources\"}},\"setPrivateVaults(address[])\":{\"params\":{\"_newPrivateVaults\":\"list of private automated vaults\"}},\"totalCredit(address)\":{\"params\":{\"_user\":\"address of user.\"},\"returns\":{\"_0\":\"_total user's credit in USD value\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"usedCredit(address)\":{\"params\":{\"_user\":\"address of user.\"},\"returns\":{\"_0\":\"_total user's used credit in USD value from depositing into private automated vaults\"}}},\"title\":\"AutomatedVaultController - Controller how much investor can invest in the private automated vault\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"availableCredit(address)\":{\"notice\":\"Get availableCredit credit for this user\"},\"getUserVaultShares(address,address)\":{\"notice\":\"Return share of user of given vault\"},\"initialize(address[],address[])\":{\"notice\":\"Initialize Automated Vault Controller\"},\"onDeposit(address,uint256)\":{\"notice\":\"record user's automated vault's share from deposit\"},\"onWithdraw(address,uint256)\":{\"notice\":\"update user's automated vault's share from withdrawal\"},\"setCreditors(address[])\":{\"notice\":\"set private automated vaults\"},\"setPrivateVaults(address[])\":{\"notice\":\"set private automated vaults\"},\"totalCredit(address)\":{\"notice\":\"Get total credit for this user\"},\"usedCredit(address)\":{\"notice\":\"Get used credit for this user\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/AutomatedVaultController.sol\":\"AutomatedVaultController\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":800},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/ContextUpgradeable.sol\\\";\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    function __Ownable_init() internal onlyInitializing {\\n        __Ownable_init_unchained();\\n    }\\n\\n    function __Ownable_init_unchained() internal onlyInitializing {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n\\n    /**\\n     * @dev This empty reserved space is put in place to allow future versions to add new\\n     * variables without shifting down storage in the inheritance chain.\\n     * See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n     */\\n    uint256[49] private __gap;\\n}\\n\",\"keccak256\":\"0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (proxy/utils/Initializable.sol)\\n\\npragma solidity ^0.8.2;\\n\\nimport \\\"../../utils/AddressUpgradeable.sol\\\";\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since proxied contracts do not make use of a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * The initialization functions use a version number. Once a version number is used, it is consumed and cannot be\\n * reused. This mechanism prevents re-execution of each \\\"step\\\" but allows the creation of new initialization steps in\\n * case an upgrade adds a module that needs to be initialized.\\n *\\n * For example:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * contract MyToken is ERC20Upgradeable {\\n *     function initialize() initializer public {\\n *         __ERC20_init(\\\"MyToken\\\", \\\"MTK\\\");\\n *     }\\n * }\\n * contract MyTokenV2 is MyToken, ERC20PermitUpgradeable {\\n *     function initializeV2() reinitializer(2) public {\\n *         __ERC20Permit_init(\\\"MyToken\\\");\\n *     }\\n * }\\n * ```\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {ERC1967Proxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n *\\n * [CAUTION]\\n * ====\\n * Avoid leaving a contract uninitialized.\\n *\\n * An uninitialized contract can be taken over by an attacker. This applies to both a proxy and its implementation\\n * contract, which may impact the proxy. To prevent the implementation contract from being used, you should invoke\\n * the {_disableInitializers} function in the constructor to automatically lock it when it is deployed:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * /// @custom:oz-upgrades-unsafe-allow constructor\\n * constructor() {\\n *     _disableInitializers();\\n * }\\n * ```\\n * ====\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     * @custom:oz-retyped-from bool\\n     */\\n    uint8 private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Triggered when the contract has been initialized or reinitialized.\\n     */\\n    event Initialized(uint8 version);\\n\\n    /**\\n     * @dev A modifier that defines a protected initializer function that can be invoked at most once. In its scope,\\n     * `onlyInitializing` functions can be used to initialize parent contracts. Equivalent to `reinitializer(1)`.\\n     */\\n    modifier initializer() {\\n        bool isTopLevelCall = _setInitializedVersion(1);\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n        }\\n        _;\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n            emit Initialized(1);\\n        }\\n    }\\n\\n    /**\\n     * @dev A modifier that defines a protected reinitializer function that can be invoked at most once, and only if the\\n     * contract hasn't been initialized to a greater version before. In its scope, `onlyInitializing` functions can be\\n     * used to initialize parent contracts.\\n     *\\n     * `initializer` is equivalent to `reinitializer(1)`, so a reinitializer may be used after the original\\n     * initialization step. This is essential to configure modules that are added through upgrades and that require\\n     * initialization.\\n     *\\n     * Note that versions can jump in increments greater than 1; this implies that if multiple reinitializers coexist in\\n     * a contract, executing them in the right order is up to the developer or operator.\\n     */\\n    modifier reinitializer(uint8 version) {\\n        bool isTopLevelCall = _setInitializedVersion(version);\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n        }\\n        _;\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n            emit Initialized(version);\\n        }\\n    }\\n\\n    /**\\n     * @dev Modifier to protect an initialization function so that it can only be invoked by functions with the\\n     * {initializer} and {reinitializer} modifiers, directly or indirectly.\\n     */\\n    modifier onlyInitializing() {\\n        require(_initializing, \\\"Initializable: contract is not initializing\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Locks the contract, preventing any future reinitialization. This cannot be part of an initializer call.\\n     * Calling this in the constructor of a contract will prevent that contract from being initialized or reinitialized\\n     * to any version. It is recommended to use this to lock implementation contracts that are designed to be called\\n     * through proxies.\\n     */\\n    function _disableInitializers() internal virtual {\\n        _setInitializedVersion(type(uint8).max);\\n    }\\n\\n    function _setInitializedVersion(uint8 version) private returns (bool) {\\n        // If the contract is initializing we ignore whether _initialized is set in order to support multiple\\n        // inheritance patterns, but we only do this in the context of a constructor, and for the lowest level\\n        // of initializers, because in other contexts the contract may have been reentered.\\n        if (_initializing) {\\n            require(\\n                version == 1 && !AddressUpgradeable.isContract(address(this)),\\n                \\\"Initializable: contract is already initialized\\\"\\n            );\\n            return false;\\n        } else {\\n            require(_initialized < version, \\\"Initializable: contract is already initialized\\\");\\n            _initialized = version;\\n            return true;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.5.0) (utils/Address.sol)\\n\\npragma solidity ^0.8.1;\\n\\n/**\\n * @dev Collection of functions related to the address type\\n */\\nlibrary AddressUpgradeable {\\n    /**\\n     * @dev Returns true if `account` is a contract.\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * It is unsafe to assume that an address for which this function returns\\n     * false is an externally-owned account (EOA) and not a contract.\\n     *\\n     * Among others, `isContract` will return false for the following\\n     * types of addresses:\\n     *\\n     *  - an externally-owned account\\n     *  - a contract in construction\\n     *  - an address where a contract will be created\\n     *  - an address where a contract lived, but was destroyed\\n     * ====\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * You shouldn't rely on `isContract` to protect against flash loan attacks!\\n     *\\n     * Preventing calls from contracts is highly discouraged. It breaks composability, breaks support for smart wallets\\n     * like Gnosis Safe, and does not provide security since it can be circumvented by calling from a contract\\n     * constructor.\\n     * ====\\n     */\\n    function isContract(address account) internal view returns (bool) {\\n        // This method relies on extcodesize/address.code.length, which returns 0\\n        // for contracts in construction, since the code is only stored at the end\\n        // of the constructor execution.\\n\\n        return account.code.length > 0;\\n    }\\n\\n    /**\\n     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to\\n     * `recipient`, forwarding all available gas and reverting on errors.\\n     *\\n     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost\\n     * of certain opcodes, possibly making contracts go over the 2300 gas limit\\n     * imposed by `transfer`, making them unable to receive funds via\\n     * `transfer`. {sendValue} removes this limitation.\\n     *\\n     * https://diligence.consensys.net/posts/2019/09/stop-using-soliditys-transfer-now/[Learn more].\\n     *\\n     * IMPORTANT: because control is transferred to `recipient`, care must be\\n     * taken to not create reentrancy vulnerabilities. Consider using\\n     * {ReentrancyGuard} or the\\n     * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].\\n     */\\n    function sendValue(address payable recipient, uint256 amount) internal {\\n        require(address(this).balance >= amount, \\\"Address: insufficient balance\\\");\\n\\n        (bool success, ) = recipient.call{value: amount}(\\\"\\\");\\n        require(success, \\\"Address: unable to send value, recipient may have reverted\\\");\\n    }\\n\\n    /**\\n     * @dev Performs a Solidity function call using a low level `call`. A\\n     * plain `call` is an unsafe replacement for a function call: use this\\n     * function instead.\\n     *\\n     * If `target` reverts with a revert reason, it is bubbled up by this\\n     * function (like regular Solidity function calls).\\n     *\\n     * Returns the raw returned data. To convert to the expected return value,\\n     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].\\n     *\\n     * Requirements:\\n     *\\n     * - `target` must be a contract.\\n     * - calling `target` with `data` must not revert.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(address target, bytes memory data) internal returns (bytes memory) {\\n        return functionCall(target, data, \\\"Address: low-level call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`], but with\\n     * `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, 0, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but also transferring `value` wei to `target`.\\n     *\\n     * Requirements:\\n     *\\n     * - the calling contract must have an ETH balance of at least `value`.\\n     * - the called Solidity function must be `payable`.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, value, \\\"Address: low-level call with value failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but\\n     * with `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        require(address(this).balance >= value, \\\"Address: insufficient balance for call\\\");\\n        require(isContract(target), \\\"Address: call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.call{value: value}(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {\\n        return functionStaticCall(target, data, \\\"Address: low-level static call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal view returns (bytes memory) {\\n        require(isContract(target), \\\"Address: static call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.staticcall(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Tool to verifies that a low level call was successful, and revert if it wasn't, either by bubbling the\\n     * revert reason using the provided one.\\n     *\\n     * _Available since v4.3._\\n     */\\n    function verifyCallResult(\\n        bool success,\\n        bytes memory returndata,\\n        string memory errorMessage\\n    ) internal pure returns (bytes memory) {\\n        if (success) {\\n            return returndata;\\n        } else {\\n            // Look for revert reason and bubble it up if present\\n            if (returndata.length > 0) {\\n                // The easiest way to bubble the revert reason is using memory via assembly\\n\\n                assembly {\\n                    let returndata_size := mload(returndata)\\n                    revert(add(32, returndata), returndata_size)\\n                }\\n            } else {\\n                revert(errorMessage);\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract ContextUpgradeable is Initializable {\\n    function __Context_init() internal onlyInitializing {\\n    }\\n\\n    function __Context_init_unchained() internal onlyInitializing {\\n    }\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n\\n    /**\\n     * @dev This empty reserved space is put in place to allow future versions to add new\\n     * variables without shifting down storage in the inheritance chain.\\n     * See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n     */\\n    uint256[50] private __gap;\\n}\\n\",\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"license\":\"MIT\"},\"contracts/AutomatedVaultController.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL\\r\\n/**\\r\\n  \\u2229~~~~\\u2229 \\r\\n  \\u03be \\uff65\\u00d7\\uff65 \\u03be \\r\\n  \\u03be\\u3000~\\u3000\\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u201c~\\uff5e~\\uff5e\\u3007 \\r\\n  \\u03be\\u3000\\u3000\\u3000\\u3000\\u3000\\u3000 \\u03be \\r\\n  \\u03be \\u03be \\u03be~\\uff5e~\\u03be \\u03be \\u03be \\r\\n\\u3000 \\u03be_\\u03be\\u03be_\\u03be\\u3000\\u03be_\\u03be\\u03be_\\u03be\\r\\nAlpaca Fin Corporation\\r\\n*/\\r\\n\\r\\npragma solidity 0.8.13;\\r\\n\\r\\nimport { OwnableUpgradeable } from \\\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\\\";\\r\\n\\r\\nimport { ICreditor } from \\\"./interfaces/ICreditor.sol\\\";\\r\\nimport { IDeltaNeutralVault } from \\\"./interfaces/IDeltaNeutralVault.sol\\\";\\r\\n\\r\\n/// @title AutomatedVaultController - Controller how much investor can invest in the private automated vault\\r\\ncontract AutomatedVaultController is OwnableUpgradeable {\\r\\n  // --- Events ---\\r\\n  event LogSetPrivateVaults(address indexed _caller, IDeltaNeutralVault[] _vaults);\\r\\n  event LogSetCreditors(address indexed _caller, ICreditor[] _creditors);\\r\\n\\r\\n  // --- State Variables ---\\r\\n  ICreditor[] public creditors;\\r\\n  IDeltaNeutralVault[] public privateVaults;\\r\\n  mapping(address => mapping(address => uint256)) public userVaultShares;\\r\\n\\r\\n  constructor() initializer {}\\r\\n\\r\\n  /// @notice Initialize Automated Vault Controller\\r\\n  /// @param _creditors list of credit sources\\r\\n  /// @param _privateVaults list of private automated vaults\\r\\n  function initialize(ICreditor[] memory _creditors, IDeltaNeutralVault[] memory _privateVaults) external initializer {\\r\\n    // sanity check\\r\\n    uint256 _creditorLength = _creditors.length;\\r\\n    for (uint8 _i = 0; _i < _creditorLength; _i++) {\\r\\n      _creditors[_i].getUserCredit(address(0));\\r\\n    }\\r\\n\\r\\n    uint256 _privateVaultLength = _privateVaults.length;\\r\\n    for (uint8 _i = 0; _i < _privateVaultLength; _i++) {\\r\\n      _privateVaults[_i].shareToValue(1e18);\\r\\n    }\\r\\n\\r\\n    // effect\\r\\n    OwnableUpgradeable.__Ownable_init();\\r\\n    creditors = _creditors;\\r\\n    privateVaults = _privateVaults;\\r\\n  }\\r\\n\\r\\n  /// @notice Get total credit for this user\\r\\n  /// @param _user address of user.\\r\\n  /// @return _total user's credit in USD value\\r\\n  function totalCredit(address _user) public view returns (uint256) {\\r\\n    uint256 _total;\\r\\n    uint256 _creditorLength = creditors.length;\\r\\n    for (uint8 _i = 0; _i < _creditorLength; ) {\\r\\n      _total = _total + creditors[_i].getUserCredit(_user);\\r\\n      // uncheck overflow to save gas\\r\\n      unchecked {\\r\\n        _i++;\\r\\n      }\\r\\n    }\\r\\n    return _total;\\r\\n  }\\r\\n\\r\\n  /// @notice Get used credit for this user\\r\\n  /// @param _user address of user.\\r\\n  /// @return _total user's used credit in USD value from depositing into private automated vaults\\r\\n  function usedCredit(address _user) public view returns (uint256) {\\r\\n    uint256 _total;\\r\\n    uint256 _privateVaultLength = privateVaults.length;\\r\\n    for (uint8 _i = 0; _i < _privateVaultLength; ) {\\r\\n      uint256 _share = userVaultShares[_user][address(privateVaults[_i])];\\r\\n      if (_share != 0) _total += privateVaults[_i].shareToValue(_share);\\r\\n      // uncheck overflow to save gas\\r\\n      unchecked {\\r\\n        _i++;\\r\\n      }\\r\\n    }\\r\\n\\r\\n    return _total;\\r\\n  }\\r\\n\\r\\n  /// @notice Get availableCredit credit for this user\\r\\n  /// @param _user address of user.\\r\\n  /// @return _total remaining credit of this user\\r\\n  function availableCredit(address _user) public view returns (uint256) {\\r\\n    uint256 _total = totalCredit(_user);\\r\\n    uint256 _used = usedCredit(_user);\\r\\n    return _total > _used ? _total - _used : 0;\\r\\n  }\\r\\n\\r\\n  /// @notice set private automated vaults\\r\\n  /// @param _newPrivateVaults list of private automated vaults\\r\\n  function setPrivateVaults(IDeltaNeutralVault[] memory _newPrivateVaults) external onlyOwner {\\r\\n    // sanity check\\r\\n    uint256 _newPrivateVaultLength = _newPrivateVaults.length;\\r\\n    for (uint8 _i = 0; _i < _newPrivateVaultLength; ) {\\r\\n      _newPrivateVaults[_i].shareToValue(1e18);\\r\\n      // uncheck overflow to save gas\\r\\n      unchecked {\\r\\n        _i++;\\r\\n      }\\r\\n    }\\r\\n\\r\\n    // effect\\r\\n    privateVaults = _newPrivateVaults;\\r\\n\\r\\n    emit LogSetPrivateVaults(msg.sender, _newPrivateVaults);\\r\\n  }\\r\\n\\r\\n  /// @notice set private automated vaults\\r\\n  /// @param _newCreditors list of credit sources\\r\\n  function setCreditors(ICreditor[] memory _newCreditors) external onlyOwner {\\r\\n    // sanity check\\r\\n    uint256 _newCreditorLength = _newCreditors.length;\\r\\n    for (uint8 _i = 0; _i < _newCreditorLength; ) {\\r\\n      _newCreditors[_i].getUserCredit(address(0));\\r\\n      // uncheck overflow to save gas\\r\\n      unchecked {\\r\\n        _i++;\\r\\n      }\\r\\n    }\\r\\n\\r\\n    // effect\\r\\n    creditors = _newCreditors;\\r\\n\\r\\n    emit LogSetCreditors(msg.sender, _newCreditors);\\r\\n  }\\r\\n\\r\\n  /// @notice record user's automated vault's share from deposit\\r\\n  /// @param _user share owner\\r\\n  /// @param _shareAmount amount of automated vault's share\\r\\n  function onDeposit(address _user, uint256 _shareAmount) external {\\r\\n    // expected delta vault to be the caller\\r\\n    userVaultShares[_user][msg.sender] += _shareAmount;\\r\\n  }\\r\\n\\r\\n  /// @notice update user's automated vault's share from withdrawal\\r\\n  /// @param _user share owner\\r\\n  /// @param _shareAmount amount of automated vault's share withdrawn\\r\\n  function onWithdraw(address _user, uint256 _shareAmount) external {\\r\\n    userVaultShares[_user][msg.sender] = userVaultShares[_user][msg.sender] <= _shareAmount\\r\\n      ? 0\\r\\n      : userVaultShares[_user][msg.sender] - _shareAmount;\\r\\n  }\\r\\n\\r\\n  /// @notice Return share of user of given vault\\r\\n  /// @param _user share owner\\r\\n  /// @param _vault delta vault\\r\\n  function getUserVaultShares(address _user, address _vault) external view returns (uint256) {\\r\\n    return userVaultShares[_user][_vault];\\r\\n  }\\r\\n}\\r\\n\",\"keccak256\":\"0x6fe0d9315f17f9ed6d0397dee7f950adea85d4e24cb424061b26569c114d9918\",\"license\":\"BUSL\"},\"contracts/interfaces/ICreditor.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL\\r\\n/**\\r\\n  \\u2229~~~~\\u2229 \\r\\n  \\u03be \\uff65\\u00d7\\uff65 \\u03be \\r\\n  \\u03be\\u3000~\\u3000\\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u201c~\\uff5e~\\uff5e\\u3007 \\r\\n  \\u03be\\u3000\\u3000\\u3000\\u3000\\u3000\\u3000 \\u03be \\r\\n  \\u03be \\u03be \\u03be~\\uff5e~\\u03be \\u03be \\u03be \\r\\n\\u3000 \\u03be_\\u03be\\u03be_\\u03be\\u3000\\u03be_\\u03be\\u03be_\\u03be\\r\\nAlpaca Fin Corporation\\r\\n*/\\r\\n\\r\\npragma solidity 0.8.13;\\r\\n\\r\\ninterface ICreditor {\\r\\n  function getUserCredit(address _user) external view returns (uint256);\\r\\n}\\r\\n\",\"keccak256\":\"0x5f5e9528faf0ae9dc328edc68b638867f95db583b288eb60192f60dcb0c1369e\",\"license\":\"BUSL\"},\"contracts/interfaces/IDeltaNeutralVault.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL\\r\\n/**\\r\\n  \\u2229~~~~\\u2229 \\r\\n  \\u03be \\uff65\\u00d7\\uff65 \\u03be \\r\\n  \\u03be\\u3000~\\u3000\\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u201c~\\uff5e~\\uff5e\\u3007 \\r\\n  \\u03be\\u3000\\u3000\\u3000\\u3000\\u3000\\u3000 \\u03be \\r\\n  \\u03be \\u03be \\u03be~\\uff5e~\\u03be \\u03be \\u03be \\r\\n\\u3000 \\u03be_\\u03be\\u03be_\\u03be\\u3000\\u03be_\\u03be\\u03be_\\u03be\\r\\nAlpaca Fin Corporation\\r\\n*/\\r\\n\\r\\npragma solidity 0.8.13;\\r\\n\\r\\ninterface IDeltaNeutralVault {\\r\\n  function shareToValue(uint256 _shareAmount) external view returns (uint256);\\r\\n}\\r\\n\",\"keccak256\":\"0xeedd6aff61bb0055264bd5ddbb4bd0fc500213d110f3b8950277758888fa32f9\",\"license\":\"BUSL\"}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b50600062000020600162000087565b9050801562000039576000805461ff0019166101001790555b801562000080576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b50620001a8565b60008054610100900460ff161562000120578160ff166001148015620000c05750620000be306200019960201b62000b861760201c565b155b620001185760405162461bcd60e51b815260206004820152602e6024820152600080516020620013e083398151915260448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084015b60405180910390fd5b506000919050565b60005460ff8084169116106200017f5760405162461bcd60e51b815260206004820152602e6024820152600080516020620013e083398151915260448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084016200010f565b506000805460ff191660ff92909216919091179055600190565b6001600160a01b03163b151590565b61122880620001b86000396000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806387f049e411610097578063ccad973d11610066578063ccad973d14610229578063e7d325a11461023c578063f220d16c1461024f578063f2fde38b1461026257600080fd5b806387f049e4146101a15780638da5cb5b146101b45780639f7b7ead146101c5578063c5c66d4d146101f057600080fd5b8063715018a6116100d3578063715018a61461014857806371bc16b51461015057806373cf25f81461017b5780637bf962de1461018e57600080fd5b80632bf9518c146100fa5780634fe018231461010f5780635886216f14610122575b600080fd5b61010d610108366004610e88565b610275565b005b61010d61011d366004610f93565b6102b1565b610135610130366004610fc8565b610416565b6040519081526020015b60405180910390f35b61010d610451565b61016361015e366004610fec565b6104b7565b6040516001600160a01b03909116815260200161013f565b61010d610189366004611069565b6104e1565b61013561019c366004610fc8565b6106e7565b6101636101af366004610fec565b610806565b6033546001600160a01b0316610163565b6101356101d33660046110cd565b606760209081526000928352604080842090915290825290205481565b6101356101fe3660046110cd565b6001600160a01b03918216600090815260676020908152604080832093909416825291909152205490565b61010d610237366004610e88565b610816565b61010d61024a366004611106565b6108a3565b61013561025d366004610fc8565b6109ee565b61010d610270366004610fc8565b610aa4565b6001600160a01b0382166000908152606760209081526040808320338452909152812080548392906102a8908490611151565b90915550505050565b6033546001600160a01b031633146103105760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064015b60405180910390fd5b805160005b818160ff1610156103bc57828160ff168151811061033557610335611169565b60200260200101516001600160a01b031663441130d5670de0b6b3a76400006040518263ffffffff1660e01b815260040161037291815260200190565b602060405180830381865afa15801561038f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103b3919061117f565b50600101610315565b5081516103d0906066906020850190610dec565b50336001600160a01b03167f2abc0e25ec4d3cb00cd094f0bca86e790d0f6455cf9064345274fc97586b31c58360405161040a9190611198565b60405180910390a25050565b600080610422836109ee565b9050600061042f846106e7565b905080821161043f576000610449565b61044981836111e5565b949350505050565b6033546001600160a01b031633146104ab5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610307565b6104b56000610b95565b565b606581815481106104c757600080fd5b6000918252602090912001546001600160a01b0316905081565b60006104ed6001610bf4565b90508015610505576000805461ff0019166101001790555b825160005b818160ff1610156105b257848160ff168151811061052a5761052a611169565b60209081029190910101516040516336b5bc3760e21b8152600060048201526001600160a01b039091169063dad6f0dc90602401602060405180830381865afa15801561057b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061059f919061117f565b50806105aa816111fc565b91505061050a565b50825160005b818160ff16101561066957848160ff16815181106105d8576105d8611169565b60200260200101516001600160a01b031663441130d5670de0b6b3a76400006040518263ffffffff1660e01b815260040161061591815260200190565b602060405180830381865afa158015610632573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610656919061117f565b5080610661816111fc565b9150506105b8565b50610672610d0a565b8451610685906065906020880190610dec565b508351610699906066906020870190610dec565b50505080156106e2576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b505050565b6066546000908190815b818160ff1610156107fd576001600160a01b03851660009081526067602052604081206066805483919060ff861690811061072e5761072e611169565b60009182526020808320909101546001600160a01b03168352820192909252604001902054905080156107f45760668260ff168154811061077157610771611169565b60009182526020909120015460405163441130d560e01b8152600481018390526001600160a01b039091169063441130d590602401602060405180830381865afa1580156107c3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107e7919061117f565b6107f19085611151565b93505b506001016106f1565b50909392505050565b606681815481106104c757600080fd5b6001600160a01b0382166000908152606760209081526040808320338452909152902054811015610875576001600160a01b03821660009081526067602090815260408083203384529091529020546108709082906111e5565b610878565b60005b6001600160a01b03909216600090815260676020908152604080832033845290915290209190915550565b6033546001600160a01b031633146108fd5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610307565b805160005b818160ff1610156109a057828160ff168151811061092257610922611169565b60209081029190910101516040516336b5bc3760e21b8152600060048201526001600160a01b039091169063dad6f0dc90602401602060405180830381865afa158015610973573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610997919061117f565b50600101610902565b5081516109b4906065906020850190610dec565b50336001600160a01b03167fe1c8f0c34d1ebb59573a7f5d542c350a1762869a702dd1ecea79c1dc6b44d8658360405161040a9190611198565b6065546000908190815b818160ff1610156107fd5760658160ff1681548110610a1957610a19611169565b6000918252602090912001546040516336b5bc3760e21b81526001600160a01b0387811660048301529091169063dad6f0dc90602401602060405180830381865afa158015610a6c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a90919061117f565b610a9a9084611151565b92506001016109f8565b6033546001600160a01b03163314610afe5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610307565b6001600160a01b038116610b7a5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f64647265737300000000000000000000000000000000000000000000000000006064820152608401610307565b610b8381610b95565b50565b6001600160a01b03163b151590565b603380546001600160a01b0383811673ffffffffffffffffffffffffffffffffffffffff19831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b60008054610100900460ff1615610c82578160ff166001148015610c175750303b155b610c7a5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b6064820152608401610307565b506000919050565b60005460ff808416911610610cf05760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b6064820152608401610307565b506000805460ff191660ff92909216919091179055600190565b600054610100900460ff16610d755760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b6064820152608401610307565b6104b5600054610100900460ff16610de35760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b6064820152608401610307565b6104b533610b95565b828054828255906000526020600020908101928215610e4e579160200282015b82811115610e4e578251825473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b03909116178255602090920191600190910190610e0c565b50610e5a929150610e5e565b5090565b5b80821115610e5a5760008155600101610e5f565b6001600160a01b0381168114610b8357600080fd5b60008060408385031215610e9b57600080fd5b8235610ea681610e73565b946020939093013593505050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715610ef357610ef3610eb4565b604052919050565b600067ffffffffffffffff821115610f1557610f15610eb4565b5060051b60200190565b600082601f830112610f3057600080fd5b81356020610f45610f4083610efb565b610eca565b82815260059290921b84018101918181019086841115610f6457600080fd5b8286015b84811015610f88578035610f7b81610e73565b8352918301918301610f68565b509695505050505050565b600060208284031215610fa557600080fd5b813567ffffffffffffffff811115610fbc57600080fd5b61044984828501610f1f565b600060208284031215610fda57600080fd5b8135610fe581610e73565b9392505050565b600060208284031215610ffe57600080fd5b5035919050565b600082601f83011261101657600080fd5b81356020611026610f4083610efb565b82815260059290921b8401810191818101908684111561104557600080fd5b8286015b84811015610f8857803561105c81610e73565b8352918301918301611049565b6000806040838503121561107c57600080fd5b823567ffffffffffffffff8082111561109457600080fd5b6110a086838701611005565b935060208501359150808211156110b657600080fd5b506110c385828601610f1f565b9150509250929050565b600080604083850312156110e057600080fd5b82356110eb81610e73565b915060208301356110fb81610e73565b809150509250929050565b60006020828403121561111857600080fd5b813567ffffffffffffffff81111561112f57600080fd5b61044984828501611005565b634e487b7160e01b600052601160045260246000fd5b600082198211156111645761116461113b565b500190565b634e487b7160e01b600052603260045260246000fd5b60006020828403121561119157600080fd5b5051919050565b6020808252825182820181905260009190848201906040850190845b818110156111d95783516001600160a01b0316835292840192918401916001016111b4565b50909695505050505050565b6000828210156111f7576111f761113b565b500390565b600060ff821660ff81036112125761121261113b565b6001019291505056fea164736f6c634300080d000a496e697469616c697a61626c653a20636f6e747261637420697320616c726561",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100f55760003560e01c806387f049e411610097578063ccad973d11610066578063ccad973d14610229578063e7d325a11461023c578063f220d16c1461024f578063f2fde38b1461026257600080fd5b806387f049e4146101a15780638da5cb5b146101b45780639f7b7ead146101c5578063c5c66d4d146101f057600080fd5b8063715018a6116100d3578063715018a61461014857806371bc16b51461015057806373cf25f81461017b5780637bf962de1461018e57600080fd5b80632bf9518c146100fa5780634fe018231461010f5780635886216f14610122575b600080fd5b61010d610108366004610e88565b610275565b005b61010d61011d366004610f93565b6102b1565b610135610130366004610fc8565b610416565b6040519081526020015b60405180910390f35b61010d610451565b61016361015e366004610fec565b6104b7565b6040516001600160a01b03909116815260200161013f565b61010d610189366004611069565b6104e1565b61013561019c366004610fc8565b6106e7565b6101636101af366004610fec565b610806565b6033546001600160a01b0316610163565b6101356101d33660046110cd565b606760209081526000928352604080842090915290825290205481565b6101356101fe3660046110cd565b6001600160a01b03918216600090815260676020908152604080832093909416825291909152205490565b61010d610237366004610e88565b610816565b61010d61024a366004611106565b6108a3565b61013561025d366004610fc8565b6109ee565b61010d610270366004610fc8565b610aa4565b6001600160a01b0382166000908152606760209081526040808320338452909152812080548392906102a8908490611151565b90915550505050565b6033546001600160a01b031633146103105760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064015b60405180910390fd5b805160005b818160ff1610156103bc57828160ff168151811061033557610335611169565b60200260200101516001600160a01b031663441130d5670de0b6b3a76400006040518263ffffffff1660e01b815260040161037291815260200190565b602060405180830381865afa15801561038f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103b3919061117f565b50600101610315565b5081516103d0906066906020850190610dec565b50336001600160a01b03167f2abc0e25ec4d3cb00cd094f0bca86e790d0f6455cf9064345274fc97586b31c58360405161040a9190611198565b60405180910390a25050565b600080610422836109ee565b9050600061042f846106e7565b905080821161043f576000610449565b61044981836111e5565b949350505050565b6033546001600160a01b031633146104ab5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610307565b6104b56000610b95565b565b606581815481106104c757600080fd5b6000918252602090912001546001600160a01b0316905081565b60006104ed6001610bf4565b90508015610505576000805461ff0019166101001790555b825160005b818160ff1610156105b257848160ff168151811061052a5761052a611169565b60209081029190910101516040516336b5bc3760e21b8152600060048201526001600160a01b039091169063dad6f0dc90602401602060405180830381865afa15801561057b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061059f919061117f565b50806105aa816111fc565b91505061050a565b50825160005b818160ff16101561066957848160ff16815181106105d8576105d8611169565b60200260200101516001600160a01b031663441130d5670de0b6b3a76400006040518263ffffffff1660e01b815260040161061591815260200190565b602060405180830381865afa158015610632573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610656919061117f565b5080610661816111fc565b9150506105b8565b50610672610d0a565b8451610685906065906020880190610dec565b508351610699906066906020870190610dec565b50505080156106e2576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b505050565b6066546000908190815b818160ff1610156107fd576001600160a01b03851660009081526067602052604081206066805483919060ff861690811061072e5761072e611169565b60009182526020808320909101546001600160a01b03168352820192909252604001902054905080156107f45760668260ff168154811061077157610771611169565b60009182526020909120015460405163441130d560e01b8152600481018390526001600160a01b039091169063441130d590602401602060405180830381865afa1580156107c3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107e7919061117f565b6107f19085611151565b93505b506001016106f1565b50909392505050565b606681815481106104c757600080fd5b6001600160a01b0382166000908152606760209081526040808320338452909152902054811015610875576001600160a01b03821660009081526067602090815260408083203384529091529020546108709082906111e5565b610878565b60005b6001600160a01b03909216600090815260676020908152604080832033845290915290209190915550565b6033546001600160a01b031633146108fd5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610307565b805160005b818160ff1610156109a057828160ff168151811061092257610922611169565b60209081029190910101516040516336b5bc3760e21b8152600060048201526001600160a01b039091169063dad6f0dc90602401602060405180830381865afa158015610973573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610997919061117f565b50600101610902565b5081516109b4906065906020850190610dec565b50336001600160a01b03167fe1c8f0c34d1ebb59573a7f5d542c350a1762869a702dd1ecea79c1dc6b44d8658360405161040a9190611198565b6065546000908190815b818160ff1610156107fd5760658160ff1681548110610a1957610a19611169565b6000918252602090912001546040516336b5bc3760e21b81526001600160a01b0387811660048301529091169063dad6f0dc90602401602060405180830381865afa158015610a6c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a90919061117f565b610a9a9084611151565b92506001016109f8565b6033546001600160a01b03163314610afe5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610307565b6001600160a01b038116610b7a5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f64647265737300000000000000000000000000000000000000000000000000006064820152608401610307565b610b8381610b95565b50565b6001600160a01b03163b151590565b603380546001600160a01b0383811673ffffffffffffffffffffffffffffffffffffffff19831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b60008054610100900460ff1615610c82578160ff166001148015610c175750303b155b610c7a5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b6064820152608401610307565b506000919050565b60005460ff808416911610610cf05760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b6064820152608401610307565b506000805460ff191660ff92909216919091179055600190565b600054610100900460ff16610d755760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b6064820152608401610307565b6104b5600054610100900460ff16610de35760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b6064820152608401610307565b6104b533610b95565b828054828255906000526020600020908101928215610e4e579160200282015b82811115610e4e578251825473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b03909116178255602090920191600190910190610e0c565b50610e5a929150610e5e565b5090565b5b80821115610e5a5760008155600101610e5f565b6001600160a01b0381168114610b8357600080fd5b60008060408385031215610e9b57600080fd5b8235610ea681610e73565b946020939093013593505050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715610ef357610ef3610eb4565b604052919050565b600067ffffffffffffffff821115610f1557610f15610eb4565b5060051b60200190565b600082601f830112610f3057600080fd5b81356020610f45610f4083610efb565b610eca565b82815260059290921b84018101918181019086841115610f6457600080fd5b8286015b84811015610f88578035610f7b81610e73565b8352918301918301610f68565b509695505050505050565b600060208284031215610fa557600080fd5b813567ffffffffffffffff811115610fbc57600080fd5b61044984828501610f1f565b600060208284031215610fda57600080fd5b8135610fe581610e73565b9392505050565b600060208284031215610ffe57600080fd5b5035919050565b600082601f83011261101657600080fd5b81356020611026610f4083610efb565b82815260059290921b8401810191818101908684111561104557600080fd5b8286015b84811015610f8857803561105c81610e73565b8352918301918301611049565b6000806040838503121561107c57600080fd5b823567ffffffffffffffff8082111561109457600080fd5b6110a086838701611005565b935060208501359150808211156110b657600080fd5b506110c385828601610f1f565b9150509250929050565b600080604083850312156110e057600080fd5b82356110eb81610e73565b915060208301356110fb81610e73565b809150509250929050565b60006020828403121561111857600080fd5b813567ffffffffffffffff81111561112f57600080fd5b61044984828501611005565b634e487b7160e01b600052601160045260246000fd5b600082198211156111645761116461113b565b500190565b634e487b7160e01b600052603260045260246000fd5b60006020828403121561119157600080fd5b5051919050565b6020808252825182820181905260009190848201906040850190845b818110156111d95783516001600160a01b0316835292840192918401916001016111b4565b50909695505050505050565b6000828210156111f7576111f761113b565b500390565b600060ff821660ff81036112125761121261113b565b6001019291505056fea164736f6c634300080d000a",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "availableCredit(address)": {
+        "params": {
+          "_user": "address of user."
+        },
+        "returns": {
+          "_0": "_total remaining credit of this user"
+        }
+      },
+      "getUserVaultShares(address,address)": {
+        "params": {
+          "_user": "share owner",
+          "_vault": "delta vault"
+        }
+      },
+      "initialize(address[],address[])": {
+        "params": {
+          "_creditors": "list of credit sources",
+          "_privateVaults": "list of private automated vaults"
+        }
+      },
+      "onDeposit(address,uint256)": {
+        "params": {
+          "_shareAmount": "amount of automated vault's share",
+          "_user": "share owner"
+        }
+      },
+      "onWithdraw(address,uint256)": {
+        "params": {
+          "_shareAmount": "amount of automated vault's share withdrawn",
+          "_user": "share owner"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "setCreditors(address[])": {
+        "params": {
+          "_newCreditors": "list of credit sources"
+        }
+      },
+      "setPrivateVaults(address[])": {
+        "params": {
+          "_newPrivateVaults": "list of private automated vaults"
+        }
+      },
+      "totalCredit(address)": {
+        "params": {
+          "_user": "address of user."
+        },
+        "returns": {
+          "_0": "_total user's credit in USD value"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "usedCredit(address)": {
+        "params": {
+          "_user": "address of user."
+        },
+        "returns": {
+          "_0": "_total user's used credit in USD value from depositing into private automated vaults"
+        }
+      }
+    },
+    "title": "AutomatedVaultController - Controller how much investor can invest in the private automated vault",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "availableCredit(address)": {
+        "notice": "Get availableCredit credit for this user"
+      },
+      "getUserVaultShares(address,address)": {
+        "notice": "Return share of user of given vault"
+      },
+      "initialize(address[],address[])": {
+        "notice": "Initialize Automated Vault Controller"
+      },
+      "onDeposit(address,uint256)": {
+        "notice": "record user's automated vault's share from deposit"
+      },
+      "onWithdraw(address,uint256)": {
+        "notice": "update user's automated vault's share from withdrawal"
+      },
+      "setCreditors(address[])": {
+        "notice": "set private automated vaults"
+      },
+      "setPrivateVaults(address[])": {
+        "notice": "set private automated vaults"
+      },
+      "totalCredit(address)": {
+        "notice": "Get total credit for this user"
+      },
+      "usedCredit(address)": {
+        "notice": "Get used credit for this user"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 130,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint8"
+      },
+      {
+        "astId": 133,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 1546,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_uint256)50_storage"
+      },
+      {
+        "astId": 10,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "51",
+        "type": "t_address"
+      },
+      {
+        "astId": 122,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "52",
+        "type": "t_array(t_uint256)49_storage"
+      },
+      {
+        "astId": 1578,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "creditors",
+        "offset": 0,
+        "slot": "101",
+        "type": "t_array(t_contract(ICreditor)5699)dyn_storage"
+      },
+      {
+        "astId": 1582,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "privateVaults",
+        "offset": 0,
+        "slot": "102",
+        "type": "t_array(t_contract(IDeltaNeutralVault)5746)dyn_storage"
+      },
+      {
+        "astId": 1588,
+        "contract": "contracts/AutomatedVaultController.sol:AutomatedVaultController",
+        "label": "userVaultShares",
+        "offset": 0,
+        "slot": "103",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_contract(ICreditor)5699)dyn_storage": {
+        "base": "t_contract(ICreditor)5699",
+        "encoding": "dynamic_array",
+        "label": "contract ICreditor[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_contract(IDeltaNeutralVault)5746)dyn_storage": {
+        "base": "t_contract(IDeltaNeutralVault)5746",
+        "encoding": "dynamic_array",
+        "label": "contract IDeltaNeutralVault[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_uint256)49_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[49]",
+        "numberOfBytes": "1568"
+      },
+      "t_array(t_uint256)50_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[50]",
+        "numberOfBytes": "1600"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_contract(ICreditor)5699": {
+        "encoding": "inplace",
+        "label": "contract ICreditor",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IDeltaNeutralVault)5746": {
+        "encoding": "inplace",
+        "label": "contract IDeltaNeutralVault",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => uint256))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_uint256)"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}

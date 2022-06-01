@@ -1,0 +1,2135 @@
+{
+  "address": "0xa6AaA6fF511820e0954145c5A08768DbF758bf36",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DeltaNeutralVaultConfig_InvalidReinvestPath",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "DeltaNeutralVaultConfig_InvalidReinvestPathLength",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "DeltaNeutralVaultConfig_InvalidSwapRouter",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "DeltaNeutralVaultConfig_LeverageLevelTooLow",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_bounty",
+          "type": "uint256"
+        }
+      ],
+      "name": "DeltaNeutralVaultConfig_TooMuchBounty",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_depositFeeBps",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_withdrawalFeeBps",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_mangementFeeBps",
+          "type": "uint256"
+        }
+      ],
+      "name": "DeltaNeutralVaultConfig_TooMuchFee",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_alpacaBeneficiary",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_alpacaBeneficiaryBps",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetAlpacaBeneficiaryConfig",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_alpacaReinvestTreasury",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_alpacaBountyBps",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetAlpacaBountyConfig",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_controller",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetController",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_depositExecutor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_withdrawExecutor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_rebalanceExecutor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_reinvestExecutor",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetExecutor",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetFeeExemptedCallers",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_depositFeeTreasury",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_withdrawFeeTreasury",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_managementFeeTreasury",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetFeeTreasury",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_depositFeeBps",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_withdrawalFeeBps",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_managementFeePerSec",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetFees",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "_newLeverageLevel",
+          "type": "uint8"
+        }
+      ],
+      "name": "LogSetLeverageLevel",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_getWrappedNativeAddr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_getWNativeRelayer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_fairLaunchAddr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_rebalanceFactor",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_positionValueTolerance",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_debtRatioTolerance",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetParams",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "_reinvestPath",
+          "type": "address[]"
+        }
+      ],
+      "name": "LogSetReinvestPath",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "partialCloseMinimizeStrategy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "stableAddTwoSideStrategy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "assetAddTwoSideStrategy",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetStrategies",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "swapFee",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "swapFeeDenom",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetSwapConfig",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_swapRouter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "source",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "destination",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetSwapRoute",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_swapRouter",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetSwapRouter",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_maxVaultPositionValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetValueLimit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetWhitelistedCallers",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetWhitelistedRebalancers",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetWhitelistedReinvestors",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "alpacaBeneficiary",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "alpacaBeneficiaryBps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "alpacaBountyBps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "alpacaReinvestFeeTreasury",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "alpacaToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "assetAddTwoSideStrategy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "controller",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "debtRatioTolerance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "depositExecutor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "depositFeeBps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "depositFeeTreasury",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fairLaunchAddr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "feeExemptedCallers",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getReinvestPath",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getSwapRouter",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getWNativeRelayer",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getWrappedNativeAddr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_getWrappedNativeAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_getWNativeRelayer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_fairLaunchAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rebalanceFactor",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_positionValueTolerance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_debtRatioTolerance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_depositFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_managementFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_withdrawFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_alpacaToken",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        }
+      ],
+      "name": "isExecutor",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_totalPositionValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "isVaultSizeAcceptable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "leverageLevel",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "managementFeePerSec",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "managementFeeTreasury",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxVaultPositionValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "partialCloseMinimizeStrategy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "positionValueTolerance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebalanceExecutor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rebalanceFactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "reinvestExecutor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "reinvestPath",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAlpacaBeneficiary",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_newAlpacaBeneficiaryBps",
+          "type": "uint256"
+        }
+      ],
+      "name": "setAlpacaBeneficiaryConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAlpacaReinvestFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_newAlpacaBountyBps",
+          "type": "uint256"
+        }
+      ],
+      "name": "setAlpacaBountyConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_controller",
+          "type": "address"
+        }
+      ],
+      "name": "setController",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_depositExecutor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_withdrawExecutor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_rebalanceExecutor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_reinvestExecutor",
+          "type": "address"
+        }
+      ],
+      "name": "setExecutor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_callers",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "setFeeExemptedCallers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newDepositFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_newDepositFeeBps",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_newWithdrawalFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_newWithdrawalFeeBps",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_newManagementFeeTreasury",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_newManagementFeePerSec",
+          "type": "uint256"
+        }
+      ],
+      "name": "setFees",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_newLeverageLevel",
+          "type": "uint8"
+        }
+      ],
+      "name": "setLeverageLevel",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_getWrappedNativeAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_getWNativeRelayer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_fairLaunchAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rebalanceFactor",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_positionValueTolerance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_debtRatioTolerance",
+          "type": "uint256"
+        }
+      ],
+      "name": "setParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_reinvestPath",
+          "type": "address[]"
+        }
+      ],
+      "name": "setReinvestPath",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_partialCloseMinimizeStrategy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_stableAddTwoSideStrategy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_assetAddTwoSideStrategy",
+          "type": "address"
+        }
+      ],
+      "name": "setStrategies",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_swapFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_swapFeeDenom",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSwapConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_swapRouter",
+          "type": "address"
+        }
+      ],
+      "name": "setSwapRouter",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maxVaultPositionValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "setValueLimit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_callers",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "setWhitelistedCallers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_callers",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "setWhitelistedRebalancer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_callers",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "_ok",
+          "type": "bool"
+        }
+      ],
+      "name": "setwhitelistedReinvestors",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stableAddTwoSideStrategy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "swapFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "swapFeeDenom",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "whitelistedCallers",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "whitelistedRebalancers",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "whitelistedReinvestors",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawExecutor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawalFeeBps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawalFeeTreasury",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x1ea97650cb745c2a3f578cc5370cdc3f08b2b512d0b6b8884a144442c0466a01",
+  "receipt": {
+    "to": null,
+    "from": "0x3A54802752fEFDc1aF2CD0b6DFA4F24694bDEE33",
+    "contractAddress": "0xa6AaA6fF511820e0954145c5A08768DbF758bf36",
+    "transactionIndex": 27,
+    "gasUsed": "1908094",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa9200bcc27b87b91c068edabfdca0ae1b375661d4c134333767ae7dcb90e48f1",
+    "transactionHash": "0x1ea97650cb745c2a3f578cc5370cdc3f08b2b512d0b6b8884a144442c0466a01",
+    "logs": [],
+    "blockNumber": 10773273,
+    "cumulativeGasUsed": "7834494",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "80c1d8b85362075366e47aa320ad0d03",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeltaNeutralVaultConfig_InvalidReinvestPath\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeltaNeutralVaultConfig_InvalidReinvestPathLength\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeltaNeutralVaultConfig_InvalidSwapRouter\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeltaNeutralVaultConfig_LeverageLevelTooLow\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bounty\",\"type\":\"uint256\"}],\"name\":\"DeltaNeutralVaultConfig_TooMuchBounty\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_depositFeeBps\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawalFeeBps\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_mangementFeeBps\",\"type\":\"uint256\"}],\"name\":\"DeltaNeutralVaultConfig_TooMuchFee\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_alpacaBeneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_alpacaBeneficiaryBps\",\"type\":\"uint256\"}],\"name\":\"LogSetAlpacaBeneficiaryConfig\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_alpacaReinvestTreasury\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_alpacaBountyBps\",\"type\":\"uint256\"}],\"name\":\"LogSetAlpacaBountyConfig\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_controller\",\"type\":\"address\"}],\"name\":\"LogSetController\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_depositExecutor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_withdrawExecutor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_rebalanceExecutor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_reinvestExecutor\",\"type\":\"address\"}],\"name\":\"LogSetExecutor\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"LogSetFeeExemptedCallers\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_depositFeeTreasury\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_withdrawFeeTreasury\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_managementFeeTreasury\",\"type\":\"address\"}],\"name\":\"LogSetFeeTreasury\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_depositFeeBps\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_withdrawalFeeBps\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_managementFeePerSec\",\"type\":\"uint256\"}],\"name\":\"LogSetFees\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"_newLeverageLevel\",\"type\":\"uint8\"}],\"name\":\"LogSetLeverageLevel\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_getWrappedNativeAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_getWNativeRelayer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_fairLaunchAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_rebalanceFactor\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_positionValueTolerance\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_debtRatioTolerance\",\"type\":\"uint256\"}],\"name\":\"LogSetParams\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"_reinvestPath\",\"type\":\"address[]\"}],\"name\":\"LogSetReinvestPath\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"partialCloseMinimizeStrategy\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"stableAddTwoSideStrategy\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"assetAddTwoSideStrategy\",\"type\":\"address\"}],\"name\":\"LogSetStrategies\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"swapFee\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"swapFeeDenom\",\"type\":\"uint256\"}],\"name\":\"LogSetSwapConfig\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_swapRouter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"source\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"}],\"name\":\"LogSetSwapRoute\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_swapRouter\",\"type\":\"address\"}],\"name\":\"LogSetSwapRouter\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_maxVaultPositionValue\",\"type\":\"uint256\"}],\"name\":\"LogSetValueLimit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"LogSetWhitelistedCallers\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"LogSetWhitelistedRebalancers\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"LogSetWhitelistedReinvestors\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"alpacaBeneficiary\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alpacaBeneficiaryBps\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alpacaBountyBps\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alpacaReinvestFeeTreasury\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"alpacaToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"assetAddTwoSideStrategy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"controller\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"debtRatioTolerance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"depositExecutor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"depositFeeBps\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"depositFeeTreasury\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fairLaunchAddr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"feeExemptedCallers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReinvestPath\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSwapRouter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWNativeRelayer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWrappedNativeAddr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_getWrappedNativeAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_getWNativeRelayer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_fairLaunchAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_rebalanceFactor\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_positionValueTolerance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_debtRatioTolerance\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_depositFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_managementFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_withdrawFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_alpacaToken\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"}],\"name\":\"isExecutor\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_totalPositionValue\",\"type\":\"uint256\"}],\"name\":\"isVaultSizeAcceptable\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"leverageLevel\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"managementFeePerSec\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"managementFeeTreasury\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxVaultPositionValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"partialCloseMinimizeStrategy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"positionValueTolerance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rebalanceExecutor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rebalanceFactor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reinvestExecutor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"reinvestPath\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAlpacaBeneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_newAlpacaBeneficiaryBps\",\"type\":\"uint256\"}],\"name\":\"setAlpacaBeneficiaryConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAlpacaReinvestFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_newAlpacaBountyBps\",\"type\":\"uint256\"}],\"name\":\"setAlpacaBountyConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_controller\",\"type\":\"address\"}],\"name\":\"setController\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_depositExecutor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_withdrawExecutor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_rebalanceExecutor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_reinvestExecutor\",\"type\":\"address\"}],\"name\":\"setExecutor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_callers\",\"type\":\"address[]\"},{\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"setFeeExemptedCallers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newDepositFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_newDepositFeeBps\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_newWithdrawalFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_newWithdrawalFeeBps\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_newManagementFeeTreasury\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_newManagementFeePerSec\",\"type\":\"uint256\"}],\"name\":\"setFees\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_newLeverageLevel\",\"type\":\"uint8\"}],\"name\":\"setLeverageLevel\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_getWrappedNativeAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_getWNativeRelayer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_fairLaunchAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_rebalanceFactor\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_positionValueTolerance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_debtRatioTolerance\",\"type\":\"uint256\"}],\"name\":\"setParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_reinvestPath\",\"type\":\"address[]\"}],\"name\":\"setReinvestPath\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_partialCloseMinimizeStrategy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_stableAddTwoSideStrategy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_assetAddTwoSideStrategy\",\"type\":\"address\"}],\"name\":\"setStrategies\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_swapFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_swapFeeDenom\",\"type\":\"uint256\"}],\"name\":\"setSwapConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_swapRouter\",\"type\":\"address\"}],\"name\":\"setSwapRouter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maxVaultPositionValue\",\"type\":\"uint256\"}],\"name\":\"setValueLimit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_callers\",\"type\":\"address[]\"},{\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"setWhitelistedCallers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_callers\",\"type\":\"address[]\"},{\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"setWhitelistedRebalancer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_callers\",\"type\":\"address[]\"},{\"internalType\":\"bool\",\"name\":\"_ok\",\"type\":\"bool\"}],\"name\":\"setwhitelistedReinvestors\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stableAddTwoSideStrategy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapFeeDenom\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"whitelistedCallers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"whitelistedRebalancers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"whitelistedReinvestors\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawExecutor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawalFeeBps\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawalFeeTreasury\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getReinvestPath()\":{\"details\":\"Get the reinvest path.\"},\"isExecutor(address)\":{\"params\":{\"_caller\":\"caller.\"}},\"isVaultSizeAcceptable(uint256)\":{\"params\":{\"_totalPositionValue\":\"new vault position value.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"setAlpacaBeneficiaryConfig(address,uint256)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_newAlpacaBeneficiary\":\"The new address to received ALPACA reinvest fee\",\"_newAlpacaBeneficiaryBps\":\"Fee from reinvesting ALPACA to positions.\"}},\"setAlpacaBountyConfig(address,uint256)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_newAlpacaBountyBps\":\"Fee from reinvesting ALPACA to positions.\",\"_newAlpacaReinvestFeeTreasury\":\"The new address to received ALPACA reinvest fee\"}},\"setController(address)\":{\"details\":\"Set a new controller\"},\"setFeeExemptedCallers(address[],bool)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_callers\":\"addresses to be exempted.\",\"_ok\":\"The new ok flag for callers.\"}},\"setFees(address,uint256,address,uint256,address,uint256)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_newDepositFeeBps\":\"Fee when user deposit to delta neutral vault.\",\"_newManagementFeePerSec\":\"Mangement Fee per second.\",\"_newWithdrawalFeeBps\":\"Fee when user deposit to delta neutral vault.\"}},\"setLeverageLevel(uint8)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_newLeverageLevel\":\"The new leverage level to be set. Must be >= 3\"}},\"setReinvestPath(address[])\":{\"details\":\"Set the reinvest path.\",\"params\":{\"_reinvestPath\":\"- The reinvest path to update.\"}},\"setSwapRouter(address)\":{\"details\":\"Set the reinvest configuration.\",\"params\":{\"_swapRouter\":\"- The router address to update.\"}},\"setValueLimit(uint256)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_maxVaultPositionValue\":\"Maximum vault size position value.\"}},\"setWhitelistedCallers(address[],bool)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_callers\":\"addresses to be whitelisted.\",\"_ok\":\"The new ok flag for callers.\"}},\"setWhitelistedRebalancer(address[],bool)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_callers\":\"addresses to be whitelisted.\",\"_ok\":\"The new ok flag for callers.\"}},\"setwhitelistedReinvestors(address[],bool)\":{\"details\":\"Must only be called by owner.\",\"params\":{\"_callers\":\"addresses to be whitelisted.\",\"_ok\":\"The new ok flag for callers.\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"stateVariables\":{\"alpacaBeneficiary\":{\"details\":\"Return ALPACA beneficiary address.\"},\"alpacaBeneficiaryBps\":{\"details\":\"Return ALPACA beneficiary bps.\"},\"alpacaBountyBps\":{\"details\":\"Return alpaca bounty bps.\"},\"alpacaReinvestFeeTreasury\":{\"details\":\"Return ALPACA reinvest fee treasury.\"},\"assetAddTwoSideStrategy\":{\"details\":\"Return Asset add two side strategy address\"},\"controller\":{\"details\":\"Return controller address\"},\"depositFeeBps\":{\"details\":\"Get deposit fee.\"},\"depositFeeTreasury\":{\"details\":\"Return the deposit fee treasury.\"},\"fairLaunchAddr\":{\"details\":\"Get fairlaunch address.\"},\"feeExemptedCallers\":{\"details\":\"Return if the caller is exempted from fee.\"},\"getSwapRouter\":{\"details\":\"Return swap router\"},\"leverageLevel\":{\"details\":\"Get leverage level.\"},\"managementFeePerSec\":{\"details\":\"Return management fee per sec.\"},\"managementFeeTreasury\":{\"details\":\"Return management fee treasury\"},\"rebalanceExecutor\":{\"details\":\"Return rebalance executor\"},\"reinvestExecutor\":{\"details\":\"Return reinvest executor\"},\"stableAddTwoSideStrategy\":{\"details\":\"Return Stable add two side strategy address\"},\"swapFeeDenom\":{\"details\":\"Return swap fee denom\"},\"whitelistedCallers\":{\"details\":\"Return if the caller is whitelisted.\"},\"whitelistedRebalancers\":{\"details\":\"Return if the caller is whitelisted.\"},\"whitelistedReinvestors\":{\"details\":\"Return if the caller is whitelisted.\"},\"withdrawExecutor\":{\"details\":\"Return withdraw executor\"},\"withdrawalFeeBps\":{\"details\":\"Get withdrawal fee.\"},\"withdrawalFeeTreasury\":{\"details\":\"Return the withdrawl fee treasury.\"}},\"title\":\"DeltaNeutralVaultConfig02 - A place where you can find all delta neutral vault config\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"depositExecutor()\":{\"notice\":\"Executor\"},\"isExecutor(address)\":{\"notice\":\"Return if caller is executor.\"},\"isVaultSizeAcceptable(uint256)\":{\"notice\":\"Return if vault can accept new position value.\"},\"partialCloseMinimizeStrategy()\":{\"notice\":\"Strategies\"},\"setAlpacaBeneficiaryConfig(address,uint256)\":{\"notice\":\"Set alpacaBeneficiaryBps.\"},\"setAlpacaBountyConfig(address,uint256)\":{\"notice\":\"Set alpacaBountyBps.\"},\"setFeeExemptedCallers(address[],bool)\":{\"notice\":\"Set exempted fee callers.\"},\"setFees(address,uint256,address,uint256,address,uint256)\":{\"notice\":\"Set fees.\"},\"setLeverageLevel(uint8)\":{\"notice\":\"Set leverage level.\"},\"setValueLimit(uint256)\":{\"notice\":\"Set position value limit.\"},\"setWhitelistedCallers(address[],bool)\":{\"notice\":\"Set whitelisted callers.\"},\"setWhitelistedRebalancer(address[],bool)\":{\"notice\":\"Set whitelisted rebalancers.\"},\"setwhitelistedReinvestors(address[],bool)\":{\"notice\":\"Set whitelisted reinvestors.\"},\"swapFee()\":{\"notice\":\"swap config\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/DeltaNeutralVaultConfig02.sol\":\"DeltaNeutralVaultConfig02\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":800},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/ContextUpgradeable.sol\\\";\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    function __Ownable_init() internal onlyInitializing {\\n        __Ownable_init_unchained();\\n    }\\n\\n    function __Ownable_init_unchained() internal onlyInitializing {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n\\n    /**\\n     * @dev This empty reserved space is put in place to allow future versions to add new\\n     * variables without shifting down storage in the inheritance chain.\\n     * See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n     */\\n    uint256[49] private __gap;\\n}\\n\",\"keccak256\":\"0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (proxy/utils/Initializable.sol)\\n\\npragma solidity ^0.8.2;\\n\\nimport \\\"../../utils/AddressUpgradeable.sol\\\";\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since proxied contracts do not make use of a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * The initialization functions use a version number. Once a version number is used, it is consumed and cannot be\\n * reused. This mechanism prevents re-execution of each \\\"step\\\" but allows the creation of new initialization steps in\\n * case an upgrade adds a module that needs to be initialized.\\n *\\n * For example:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * contract MyToken is ERC20Upgradeable {\\n *     function initialize() initializer public {\\n *         __ERC20_init(\\\"MyToken\\\", \\\"MTK\\\");\\n *     }\\n * }\\n * contract MyTokenV2 is MyToken, ERC20PermitUpgradeable {\\n *     function initializeV2() reinitializer(2) public {\\n *         __ERC20Permit_init(\\\"MyToken\\\");\\n *     }\\n * }\\n * ```\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {ERC1967Proxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n *\\n * [CAUTION]\\n * ====\\n * Avoid leaving a contract uninitialized.\\n *\\n * An uninitialized contract can be taken over by an attacker. This applies to both a proxy and its implementation\\n * contract, which may impact the proxy. To prevent the implementation contract from being used, you should invoke\\n * the {_disableInitializers} function in the constructor to automatically lock it when it is deployed:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * /// @custom:oz-upgrades-unsafe-allow constructor\\n * constructor() {\\n *     _disableInitializers();\\n * }\\n * ```\\n * ====\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     * @custom:oz-retyped-from bool\\n     */\\n    uint8 private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Triggered when the contract has been initialized or reinitialized.\\n     */\\n    event Initialized(uint8 version);\\n\\n    /**\\n     * @dev A modifier that defines a protected initializer function that can be invoked at most once. In its scope,\\n     * `onlyInitializing` functions can be used to initialize parent contracts. Equivalent to `reinitializer(1)`.\\n     */\\n    modifier initializer() {\\n        bool isTopLevelCall = _setInitializedVersion(1);\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n        }\\n        _;\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n            emit Initialized(1);\\n        }\\n    }\\n\\n    /**\\n     * @dev A modifier that defines a protected reinitializer function that can be invoked at most once, and only if the\\n     * contract hasn't been initialized to a greater version before. In its scope, `onlyInitializing` functions can be\\n     * used to initialize parent contracts.\\n     *\\n     * `initializer` is equivalent to `reinitializer(1)`, so a reinitializer may be used after the original\\n     * initialization step. This is essential to configure modules that are added through upgrades and that require\\n     * initialization.\\n     *\\n     * Note that versions can jump in increments greater than 1; this implies that if multiple reinitializers coexist in\\n     * a contract, executing them in the right order is up to the developer or operator.\\n     */\\n    modifier reinitializer(uint8 version) {\\n        bool isTopLevelCall = _setInitializedVersion(version);\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n        }\\n        _;\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n            emit Initialized(version);\\n        }\\n    }\\n\\n    /**\\n     * @dev Modifier to protect an initialization function so that it can only be invoked by functions with the\\n     * {initializer} and {reinitializer} modifiers, directly or indirectly.\\n     */\\n    modifier onlyInitializing() {\\n        require(_initializing, \\\"Initializable: contract is not initializing\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Locks the contract, preventing any future reinitialization. This cannot be part of an initializer call.\\n     * Calling this in the constructor of a contract will prevent that contract from being initialized or reinitialized\\n     * to any version. It is recommended to use this to lock implementation contracts that are designed to be called\\n     * through proxies.\\n     */\\n    function _disableInitializers() internal virtual {\\n        _setInitializedVersion(type(uint8).max);\\n    }\\n\\n    function _setInitializedVersion(uint8 version) private returns (bool) {\\n        // If the contract is initializing we ignore whether _initialized is set in order to support multiple\\n        // inheritance patterns, but we only do this in the context of a constructor, and for the lowest level\\n        // of initializers, because in other contexts the contract may have been reentered.\\n        if (_initializing) {\\n            require(\\n                version == 1 && !AddressUpgradeable.isContract(address(this)),\\n                \\\"Initializable: contract is already initialized\\\"\\n            );\\n            return false;\\n        } else {\\n            require(_initialized < version, \\\"Initializable: contract is already initialized\\\");\\n            _initialized = version;\\n            return true;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.5.0) (utils/Address.sol)\\n\\npragma solidity ^0.8.1;\\n\\n/**\\n * @dev Collection of functions related to the address type\\n */\\nlibrary AddressUpgradeable {\\n    /**\\n     * @dev Returns true if `account` is a contract.\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * It is unsafe to assume that an address for which this function returns\\n     * false is an externally-owned account (EOA) and not a contract.\\n     *\\n     * Among others, `isContract` will return false for the following\\n     * types of addresses:\\n     *\\n     *  - an externally-owned account\\n     *  - a contract in construction\\n     *  - an address where a contract will be created\\n     *  - an address where a contract lived, but was destroyed\\n     * ====\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * You shouldn't rely on `isContract` to protect against flash loan attacks!\\n     *\\n     * Preventing calls from contracts is highly discouraged. It breaks composability, breaks support for smart wallets\\n     * like Gnosis Safe, and does not provide security since it can be circumvented by calling from a contract\\n     * constructor.\\n     * ====\\n     */\\n    function isContract(address account) internal view returns (bool) {\\n        // This method relies on extcodesize/address.code.length, which returns 0\\n        // for contracts in construction, since the code is only stored at the end\\n        // of the constructor execution.\\n\\n        return account.code.length > 0;\\n    }\\n\\n    /**\\n     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to\\n     * `recipient`, forwarding all available gas and reverting on errors.\\n     *\\n     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost\\n     * of certain opcodes, possibly making contracts go over the 2300 gas limit\\n     * imposed by `transfer`, making them unable to receive funds via\\n     * `transfer`. {sendValue} removes this limitation.\\n     *\\n     * https://diligence.consensys.net/posts/2019/09/stop-using-soliditys-transfer-now/[Learn more].\\n     *\\n     * IMPORTANT: because control is transferred to `recipient`, care must be\\n     * taken to not create reentrancy vulnerabilities. Consider using\\n     * {ReentrancyGuard} or the\\n     * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].\\n     */\\n    function sendValue(address payable recipient, uint256 amount) internal {\\n        require(address(this).balance >= amount, \\\"Address: insufficient balance\\\");\\n\\n        (bool success, ) = recipient.call{value: amount}(\\\"\\\");\\n        require(success, \\\"Address: unable to send value, recipient may have reverted\\\");\\n    }\\n\\n    /**\\n     * @dev Performs a Solidity function call using a low level `call`. A\\n     * plain `call` is an unsafe replacement for a function call: use this\\n     * function instead.\\n     *\\n     * If `target` reverts with a revert reason, it is bubbled up by this\\n     * function (like regular Solidity function calls).\\n     *\\n     * Returns the raw returned data. To convert to the expected return value,\\n     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].\\n     *\\n     * Requirements:\\n     *\\n     * - `target` must be a contract.\\n     * - calling `target` with `data` must not revert.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(address target, bytes memory data) internal returns (bytes memory) {\\n        return functionCall(target, data, \\\"Address: low-level call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`], but with\\n     * `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, 0, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but also transferring `value` wei to `target`.\\n     *\\n     * Requirements:\\n     *\\n     * - the calling contract must have an ETH balance of at least `value`.\\n     * - the called Solidity function must be `payable`.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, value, \\\"Address: low-level call with value failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but\\n     * with `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        require(address(this).balance >= value, \\\"Address: insufficient balance for call\\\");\\n        require(isContract(target), \\\"Address: call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.call{value: value}(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {\\n        return functionStaticCall(target, data, \\\"Address: low-level static call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal view returns (bytes memory) {\\n        require(isContract(target), \\\"Address: static call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.staticcall(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Tool to verifies that a low level call was successful, and revert if it wasn't, either by bubbling the\\n     * revert reason using the provided one.\\n     *\\n     * _Available since v4.3._\\n     */\\n    function verifyCallResult(\\n        bool success,\\n        bytes memory returndata,\\n        string memory errorMessage\\n    ) internal pure returns (bytes memory) {\\n        if (success) {\\n            return returndata;\\n        } else {\\n            // Look for revert reason and bubble it up if present\\n            if (returndata.length > 0) {\\n                // The easiest way to bubble the revert reason is using memory via assembly\\n\\n                assembly {\\n                    let returndata_size := mload(returndata)\\n                    revert(add(32, returndata), returndata_size)\\n                }\\n            } else {\\n                revert(errorMessage);\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract ContextUpgradeable is Initializable {\\n    function __Context_init() internal onlyInitializing {\\n    }\\n\\n    function __Context_init_unchained() internal onlyInitializing {\\n    }\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n\\n    /**\\n     * @dev This empty reserved space is put in place to allow future versions to add new\\n     * variables without shifting down storage in the inheritance chain.\\n     * See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n     */\\n    uint256[50] private __gap;\\n}\\n\",\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"license\":\"MIT\"},\"contracts/DeltaNeutralVaultConfig02.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL\\r\\n/**\\r\\n  \\u2229~~~~\\u2229 \\r\\n  \\u03be \\uff65\\u00d7\\uff65 \\u03be \\r\\n  \\u03be\\u3000~\\u3000\\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u201c~\\uff5e~\\uff5e\\u3007 \\r\\n  \\u03be\\u3000\\u3000\\u3000\\u3000\\u3000\\u3000 \\u03be \\r\\n  \\u03be \\u03be \\u03be~\\uff5e~\\u03be \\u03be \\u03be \\r\\n\\u3000 \\u03be_\\u03be\\u03be_\\u03be\\u3000\\u03be_\\u03be\\u03be_\\u03be\\r\\nAlpaca Fin Corporation\\r\\n*/\\r\\n\\r\\npragma solidity 0.8.13;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\\\";\\r\\n\\r\\nimport \\\"./interfaces/IDeltaNeutralVaultConfig02.sol\\\";\\r\\nimport \\\"./interfaces/IController.sol\\\";\\r\\n\\r\\n/// @title DeltaNeutralVaultConfig02 - A place where you can find all delta neutral vault config\\r\\n// solhint-disable max-states-count\\r\\ncontract DeltaNeutralVaultConfig02 is IDeltaNeutralVaultConfig02, OwnableUpgradeable {\\r\\n  // --- Events ---\\r\\n  event LogSetParams(\\r\\n    address indexed _caller,\\r\\n    address _getWrappedNativeAddr,\\r\\n    address _getWNativeRelayer,\\r\\n    address _fairLaunchAddr,\\r\\n    uint256 _rebalanceFactor,\\r\\n    uint256 _positionValueTolerance,\\r\\n    uint256 _debtRatioTolerance\\r\\n  );\\r\\n  event LogSetWhitelistedCallers(address indexed _caller, address indexed _address, bool _ok);\\r\\n  event LogSetWhitelistedRebalancers(address indexed _caller, address indexed _address, bool _ok);\\r\\n  event LogSetFeeExemptedCallers(address indexed _caller, address indexed _address, bool _ok);\\r\\n  event LogSetSwapRoute(address indexed _caller, address indexed _swapRouter, address source, address destination);\\r\\n  event LogSetLeverageLevel(address indexed _caller, uint8 _newLeverageLevel);\\r\\n  event LogSetAlpacaBountyConfig(address indexed _caller, address _alpacaReinvestTreasury, uint256 _alpacaBountyBps);\\r\\n  event LogSetAlpacaBeneficiaryConfig(\\r\\n    address indexed _caller,\\r\\n    address _alpacaBeneficiary,\\r\\n    uint256 _alpacaBeneficiaryBps\\r\\n  );\\r\\n  event LogSetWhitelistedReinvestors(address indexed _caller, address indexed _address, bool _ok);\\r\\n  event LogSetValueLimit(address indexed _caller, uint256 _maxVaultPositionValue);\\r\\n  event LogSetFees(\\r\\n    address indexed _caller,\\r\\n    uint256 _depositFeeBps,\\r\\n    uint256 _withdrawalFeeBps,\\r\\n    uint256 _managementFeePerSec\\r\\n  );\\r\\n  event LogSetFeeTreasury(\\r\\n    address indexed _caller,\\r\\n    address _depositFeeTreasury,\\r\\n    address _withdrawFeeTreasury,\\r\\n    address _managementFeeTreasury\\r\\n  );\\r\\n  event LogSetSwapRouter(address indexed _caller, address _swapRouter);\\r\\n  event LogSetReinvestPath(address indexed _caller, address[] _reinvestPath);\\r\\n  event LogSetController(address indexed _caller, address _controller);\\r\\n\\r\\n  event LogSetExecutor(\\r\\n    address indexed _caller,\\r\\n    address _depositExecutor,\\r\\n    address _withdrawExecutor,\\r\\n    address _rebalanceExecutor,\\r\\n    address _reinvestExecutor\\r\\n  );\\r\\n  event LogSetSwapConfig(address indexed _caller, uint256 swapFee, uint256 swapFeeDenom);\\r\\n  event LogSetStrategies(\\r\\n    address indexed _caller,\\r\\n    address partialCloseMinimizeStrategy,\\r\\n    address stableAddTwoSideStrategy,\\r\\n    address assetAddTwoSideStrategy\\r\\n  );\\r\\n\\r\\n  // --- Errors ---\\r\\n  error DeltaNeutralVaultConfig_LeverageLevelTooLow();\\r\\n  error DeltaNeutralVaultConfig_TooMuchFee(uint256 _depositFeeBps, uint256 _withdrawalFeeBps, uint256 _mangementFeeBps);\\r\\n  error DeltaNeutralVaultConfig_TooMuchBounty(uint256 _bounty);\\r\\n  error DeltaNeutralVaultConfig_InvalidSwapRouter();\\r\\n  error DeltaNeutralVaultConfig_InvalidReinvestPath();\\r\\n  error DeltaNeutralVaultConfig_InvalidReinvestPathLength();\\r\\n\\r\\n  // --- Constants ---\\r\\n  uint8 private constant MIN_LEVERAGE_LEVEL = 3;\\r\\n  uint256 private constant MAX_DEPOSIT_FEE_BPS = 1000;\\r\\n  uint256 private constant MAX_WITHDRAWAL_FEE_BPS = 1000;\\r\\n  uint256 private constant MAX_MANGEMENT_FEE_PER_SEC = 3170979198;\\r\\n  uint256 private constant MAX_ALPACA_BOUNTY_BPS = 2500;\\r\\n  uint256 private constant MAX_ALPACA_BENEFICIARY_BPS = 6000;\\r\\n\\r\\n  // --- States ---\\r\\n  // Configuration for Delta Neutral Vault\\r\\n  // Address for wrapped native eg WBNB, WETH\\r\\n  address public override getWrappedNativeAddr;\\r\\n  // Address for wNtive Relayer\\r\\n  address public override getWNativeRelayer;\\r\\n  // FairLaunch contract address\\r\\n  address public fairLaunchAddr;\\r\\n\\r\\n  // The maximum position value in USD that can be held in the vault\\r\\n  uint256 public maxVaultPositionValue;\\r\\n  // If debt ratio went above rebalanceFactor, then rebalance\\r\\n  uint256 public override rebalanceFactor;\\r\\n  // Tolerance bps that allow margin for misc calculation\\r\\n  uint256 public override positionValueTolerance;\\r\\n  // Specific Tolerance bps use for debt ratio check during withdraw\\r\\n  uint256 public override debtRatioTolerance;\\r\\n\\r\\n  // Deposit fee treasury.\\r\\n  address public depositFeeTreasury;\\r\\n  // Fee when user deposit to delta neutral vault\\r\\n  uint256 public override depositFeeBps;\\r\\n  // Withdrawal fee treasury.\\r\\n  address public withdrawalFeeTreasury;\\r\\n  // Fee when user withdraw from delta neutral vault\\r\\n  uint256 public override withdrawalFeeBps;\\r\\n  // Management fee treausry.\\r\\n  address public managementFeeTreasury;\\r\\n  // Management fee when users is using the vault\\r\\n  uint256 public override managementFeePerSec;\\r\\n\\r\\n  // Targeted leverage level used for underlying positions\\r\\n  uint8 public override leverageLevel;\\r\\n\\r\\n  // ALPACA token\\r\\n  address public alpacaToken;\\r\\n  // The router to be used for swaping ALPACA to other assets\\r\\n  address public getSwapRouter;\\r\\n  // The path to be used for reinvesting\\r\\n  address[] public reinvestPath;\\r\\n\\r\\n  // Mapping of whitelisted callers\\r\\n  mapping(address => bool) public whitelistedCallers;\\r\\n  // Mapping of whitelisted rebalancers\\r\\n  mapping(address => bool) public whitelistedRebalancers;\\r\\n\\r\\n  // list of exempted callers.\\r\\n  mapping(address => bool) public feeExemptedCallers;\\r\\n\\r\\n  // list of reinvestors\\r\\n  mapping(address => bool) public whitelistedReinvestors;\\r\\n\\r\\n  // ALPACA treausry\\r\\n  address public alpacaReinvestFeeTreasury;\\r\\n  // ALPACA bounty percentage.\\r\\n  uint256 public alpacaBountyBps;\\r\\n  // ALPACA beneficiary. This is the address that will receive portion of the bounty.\\r\\n  address public alpacaBeneficiary;\\r\\n  // ALPACA beneficiary percentage.\\r\\n  uint256 public alpacaBeneficiaryBps;\\r\\n\\r\\n  // Automated Vault Controller\\r\\n  address public override controller;\\r\\n\\r\\n  /// Executor\\r\\n  address public depositExecutor;\\r\\n  address public withdrawExecutor;\\r\\n  address public rebalanceExecutor;\\r\\n  address public reinvestExecutor;\\r\\n\\r\\n  /// swap config\\r\\n  uint256 public swapFee;\\r\\n  uint256 public swapFeeDenom;\\r\\n\\r\\n  /// Strategies\\r\\n  address public partialCloseMinimizeStrategy;\\r\\n  address public stableAddTwoSideStrategy;\\r\\n  address public assetAddTwoSideStrategy;\\r\\n\\r\\n  function initialize(\\r\\n    address _getWrappedNativeAddr,\\r\\n    address _getWNativeRelayer,\\r\\n    address _fairLaunchAddr,\\r\\n    uint256 _rebalanceFactor,\\r\\n    uint256 _positionValueTolerance,\\r\\n    uint256 _debtRatioTolerance,\\r\\n    address _depositFeeTreasury,\\r\\n    address _managementFeeTreasury,\\r\\n    address _withdrawFeeTreasury,\\r\\n    address _alpacaToken\\r\\n  ) external initializer {\\r\\n    OwnableUpgradeable.__Ownable_init();\\r\\n\\r\\n    alpacaToken = _alpacaToken;\\r\\n\\r\\n    setFees(_depositFeeTreasury, 0, _withdrawFeeTreasury, 0, _managementFeeTreasury, 0);\\r\\n    setParams(\\r\\n      _getWrappedNativeAddr,\\r\\n      _getWNativeRelayer,\\r\\n      _fairLaunchAddr,\\r\\n      _rebalanceFactor,\\r\\n      _positionValueTolerance,\\r\\n      _debtRatioTolerance\\r\\n    );\\r\\n  }\\r\\n\\r\\n  function setParams(\\r\\n    address _getWrappedNativeAddr,\\r\\n    address _getWNativeRelayer,\\r\\n    address _fairLaunchAddr,\\r\\n    uint256 _rebalanceFactor,\\r\\n    uint256 _positionValueTolerance,\\r\\n    uint256 _debtRatioTolerance\\r\\n  ) public onlyOwner {\\r\\n    getWrappedNativeAddr = _getWrappedNativeAddr;\\r\\n    getWNativeRelayer = _getWNativeRelayer;\\r\\n    fairLaunchAddr = _fairLaunchAddr;\\r\\n    rebalanceFactor = _rebalanceFactor;\\r\\n    positionValueTolerance = _positionValueTolerance;\\r\\n    debtRatioTolerance = _debtRatioTolerance;\\r\\n\\r\\n    emit LogSetParams(\\r\\n      msg.sender,\\r\\n      _getWrappedNativeAddr,\\r\\n      _getWNativeRelayer,\\r\\n      _fairLaunchAddr,\\r\\n      _rebalanceFactor,\\r\\n      _positionValueTolerance,\\r\\n      _debtRatioTolerance\\r\\n    );\\r\\n  }\\r\\n\\r\\n  /// @notice Set whitelisted callers.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _callers addresses to be whitelisted.\\r\\n  /// @param _ok The new ok flag for callers.\\r\\n  function setWhitelistedCallers(address[] calldata _callers, bool _ok) external onlyOwner {\\r\\n    for (uint256 _idx = 0; _idx < _callers.length; _idx++) {\\r\\n      whitelistedCallers[_callers[_idx]] = _ok;\\r\\n      emit LogSetWhitelistedCallers(msg.sender, _callers[_idx], _ok);\\r\\n    }\\r\\n  }\\r\\n\\r\\n  /// @notice Set whitelisted rebalancers.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _callers addresses to be whitelisted.\\r\\n  /// @param _ok The new ok flag for callers.\\r\\n  function setWhitelistedRebalancer(address[] calldata _callers, bool _ok) external onlyOwner {\\r\\n    for (uint256 _idx = 0; _idx < _callers.length; _idx++) {\\r\\n      whitelistedRebalancers[_callers[_idx]] = _ok;\\r\\n      emit LogSetWhitelistedRebalancers(msg.sender, _callers[_idx], _ok);\\r\\n    }\\r\\n  }\\r\\n\\r\\n  /// @notice Set whitelisted reinvestors.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _callers addresses to be whitelisted.\\r\\n  /// @param _ok The new ok flag for callers.\\r\\n  function setwhitelistedReinvestors(address[] calldata _callers, bool _ok) external onlyOwner {\\r\\n    for (uint256 _idx = 0; _idx < _callers.length; _idx++) {\\r\\n      whitelistedReinvestors[_callers[_idx]] = _ok;\\r\\n      emit LogSetWhitelistedReinvestors(msg.sender, _callers[_idx], _ok);\\r\\n    }\\r\\n  }\\r\\n\\r\\n  /// @notice Set leverage level.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _newLeverageLevel The new leverage level to be set. Must be >= 3\\r\\n  function setLeverageLevel(uint8 _newLeverageLevel) external onlyOwner {\\r\\n    if (_newLeverageLevel < MIN_LEVERAGE_LEVEL) {\\r\\n      revert DeltaNeutralVaultConfig_LeverageLevelTooLow();\\r\\n    }\\r\\n    leverageLevel = _newLeverageLevel;\\r\\n    emit LogSetLeverageLevel(msg.sender, _newLeverageLevel);\\r\\n  }\\r\\n\\r\\n  /// @notice Set exempted fee callers.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _callers addresses to be exempted.\\r\\n  /// @param _ok The new ok flag for callers.\\r\\n  function setFeeExemptedCallers(address[] calldata _callers, bool _ok) external onlyOwner {\\r\\n    for (uint256 _idx = 0; _idx < _callers.length; _idx++) {\\r\\n      feeExemptedCallers[_callers[_idx]] = _ok;\\r\\n      emit LogSetFeeExemptedCallers(msg.sender, _callers[_idx], _ok);\\r\\n    }\\r\\n  }\\r\\n\\r\\n  /// @notice Set fees.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _newDepositFeeBps Fee when user deposit to delta neutral vault.\\r\\n  /// @param _newWithdrawalFeeBps Fee when user deposit to delta neutral vault.\\r\\n  /// @param _newManagementFeePerSec Mangement Fee per second.\\r\\n  function setFees(\\r\\n    address _newDepositFeeTreasury,\\r\\n    uint256 _newDepositFeeBps,\\r\\n    address _newWithdrawalFeeTreasury,\\r\\n    uint256 _newWithdrawalFeeBps,\\r\\n    address _newManagementFeeTreasury,\\r\\n    uint256 _newManagementFeePerSec\\r\\n  ) public onlyOwner {\\r\\n    if (\\r\\n      _newDepositFeeBps > MAX_DEPOSIT_FEE_BPS ||\\r\\n      _newWithdrawalFeeBps > MAX_WITHDRAWAL_FEE_BPS ||\\r\\n      _newManagementFeePerSec > MAX_MANGEMENT_FEE_PER_SEC\\r\\n    ) {\\r\\n      revert DeltaNeutralVaultConfig_TooMuchFee(_newDepositFeeBps, _newWithdrawalFeeBps, _newManagementFeePerSec);\\r\\n    }\\r\\n\\r\\n    depositFeeTreasury = _newDepositFeeTreasury;\\r\\n    depositFeeBps = _newDepositFeeBps;\\r\\n\\r\\n    withdrawalFeeTreasury = _newWithdrawalFeeTreasury;\\r\\n    withdrawalFeeBps = _newWithdrawalFeeBps;\\r\\n\\r\\n    managementFeeTreasury = _newManagementFeeTreasury;\\r\\n    managementFeePerSec = _newManagementFeePerSec;\\r\\n\\r\\n    emit LogSetFees(msg.sender, _newDepositFeeBps, _newWithdrawalFeeBps, _newManagementFeePerSec);\\r\\n    emit LogSetFeeTreasury(msg.sender, _newDepositFeeTreasury, _newWithdrawalFeeTreasury, _newManagementFeeTreasury);\\r\\n  }\\r\\n\\r\\n  /// @notice Set alpacaBountyBps.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _newAlpacaReinvestFeeTreasury The new address to received ALPACA reinvest fee\\r\\n  /// @param _newAlpacaBountyBps Fee from reinvesting ALPACA to positions.\\r\\n  function setAlpacaBountyConfig(address _newAlpacaReinvestFeeTreasury, uint256 _newAlpacaBountyBps)\\r\\n    external\\r\\n    onlyOwner\\r\\n  {\\r\\n    if (_newAlpacaBountyBps > MAX_ALPACA_BOUNTY_BPS) {\\r\\n      revert DeltaNeutralVaultConfig_TooMuchBounty(_newAlpacaBountyBps);\\r\\n    }\\r\\n\\r\\n    alpacaReinvestFeeTreasury = _newAlpacaReinvestFeeTreasury;\\r\\n    alpacaBountyBps = _newAlpacaBountyBps;\\r\\n\\r\\n    emit LogSetAlpacaBountyConfig(msg.sender, alpacaReinvestFeeTreasury, alpacaBountyBps);\\r\\n  }\\r\\n\\r\\n  /// @notice Set alpacaBeneficiaryBps.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _newAlpacaBeneficiary The new address to received ALPACA reinvest fee\\r\\n  /// @param _newAlpacaBeneficiaryBps Fee from reinvesting ALPACA to positions.\\r\\n  function setAlpacaBeneficiaryConfig(address _newAlpacaBeneficiary, uint256 _newAlpacaBeneficiaryBps)\\r\\n    external\\r\\n    onlyOwner\\r\\n  {\\r\\n    if (_newAlpacaBeneficiaryBps > MAX_ALPACA_BENEFICIARY_BPS) {\\r\\n      revert DeltaNeutralVaultConfig_TooMuchBounty(_newAlpacaBeneficiaryBps);\\r\\n    }\\r\\n\\r\\n    alpacaBeneficiary = _newAlpacaBeneficiary;\\r\\n    alpacaBeneficiaryBps = _newAlpacaBeneficiaryBps;\\r\\n\\r\\n    emit LogSetAlpacaBeneficiaryConfig(msg.sender, alpacaBeneficiary, alpacaBeneficiaryBps);\\r\\n  }\\r\\n\\r\\n  /// @notice Set position value limit.\\r\\n  /// @dev Must only be called by owner.\\r\\n  /// @param _maxVaultPositionValue Maximum vault size position value.\\r\\n  function setValueLimit(uint256 _maxVaultPositionValue) external onlyOwner {\\r\\n    maxVaultPositionValue = _maxVaultPositionValue;\\r\\n    emit LogSetValueLimit(msg.sender, _maxVaultPositionValue);\\r\\n  }\\r\\n\\r\\n  /// @notice Return if vault can accept new position value.\\r\\n  /// @param _totalPositionValue new vault position value.\\r\\n  function isVaultSizeAcceptable(uint256 _totalPositionValue) external view returns (bool) {\\r\\n    if (_totalPositionValue > maxVaultPositionValue) {\\r\\n      return false;\\r\\n    }\\r\\n    return true;\\r\\n  }\\r\\n\\r\\n  /// @dev Set the reinvest configuration.\\r\\n  /// @param _swapRouter - The router address to update.\\r\\n  function setSwapRouter(address _swapRouter) external onlyOwner {\\r\\n    if (_swapRouter == address(0)) revert DeltaNeutralVaultConfig_InvalidSwapRouter();\\r\\n    getSwapRouter = _swapRouter;\\r\\n    emit LogSetSwapRouter(msg.sender, _swapRouter);\\r\\n  }\\r\\n\\r\\n  /// @dev Set the reinvest path.\\r\\n  /// @param _reinvestPath - The reinvest path to update.\\r\\n  function setReinvestPath(address[] calldata _reinvestPath) external onlyOwner {\\r\\n    if (_reinvestPath.length < 2) revert DeltaNeutralVaultConfig_InvalidReinvestPathLength();\\r\\n\\r\\n    if (_reinvestPath[0] != alpacaToken) revert DeltaNeutralVaultConfig_InvalidReinvestPath();\\r\\n\\r\\n    reinvestPath = _reinvestPath;\\r\\n    emit LogSetReinvestPath(msg.sender, _reinvestPath);\\r\\n  }\\r\\n\\r\\n  /// @dev Get the reinvest path.\\r\\n  function getReinvestPath() external view returns (address[] memory) {\\r\\n    return reinvestPath;\\r\\n  }\\r\\n\\r\\n  function setController(address _controller) external onlyOwner {\\r\\n    // sanity check\\r\\n    IController(_controller).totalCredit(address(0));\\r\\n\\r\\n    controller = _controller;\\r\\n\\r\\n    emit LogSetController(msg.sender, _controller);\\r\\n  }\\r\\n\\r\\n  function setExecutor(\\r\\n    address _depositExecutor,\\r\\n    address _withdrawExecutor,\\r\\n    address _rebalanceExecutor,\\r\\n    address _reinvestExecutor\\r\\n  ) external onlyOwner {\\r\\n    depositExecutor = _depositExecutor;\\r\\n    withdrawExecutor = _withdrawExecutor;\\r\\n    rebalanceExecutor = _rebalanceExecutor;\\r\\n    reinvestExecutor = _reinvestExecutor;\\r\\n\\r\\n    emit LogSetExecutor(msg.sender, _depositExecutor, _withdrawExecutor, _rebalanceExecutor, _reinvestExecutor);\\r\\n  }\\r\\n\\r\\n  /// @notice Return if caller is executor.\\r\\n  /// @param _caller caller.\\r\\n  function isExecutor(address _caller) external view returns (bool) {\\r\\n    return\\r\\n      _caller == depositExecutor ||\\r\\n      _caller == withdrawExecutor ||\\r\\n      _caller == rebalanceExecutor ||\\r\\n      _caller == reinvestExecutor;\\r\\n  }\\r\\n\\r\\n  function setSwapConfig(uint256 _swapFee, uint256 _swapFeeDenom) external onlyOwner {\\r\\n    swapFee = _swapFee;\\r\\n    swapFeeDenom = _swapFeeDenom;\\r\\n\\r\\n    emit LogSetSwapConfig(msg.sender, _swapFee, _swapFeeDenom);\\r\\n  }\\r\\n\\r\\n  function setStrategies(\\r\\n    address _partialCloseMinimizeStrategy,\\r\\n    address _stableAddTwoSideStrategy,\\r\\n    address _assetAddTwoSideStrategy\\r\\n  ) external onlyOwner {\\r\\n    partialCloseMinimizeStrategy = _partialCloseMinimizeStrategy;\\r\\n    stableAddTwoSideStrategy = _stableAddTwoSideStrategy;\\r\\n    assetAddTwoSideStrategy = _assetAddTwoSideStrategy;\\r\\n\\r\\n    emit LogSetStrategies(\\r\\n      msg.sender,\\r\\n      _partialCloseMinimizeStrategy,\\r\\n      _stableAddTwoSideStrategy,\\r\\n      _assetAddTwoSideStrategy\\r\\n    );\\r\\n  }\\r\\n}\\r\\n\",\"keccak256\":\"0xdd145f308de7ded23e87dc3546e5f7749e06aa69f1691d45ab7ebb12f599697a\",\"license\":\"BUSL\"},\"contracts/interfaces/IController.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL\\r\\n/**\\r\\n  \\u2229~~~~\\u2229 \\r\\n  \\u03be \\uff65\\u00d7\\uff65 \\u03be \\r\\n  \\u03be\\u3000~\\u3000\\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u201c~\\uff5e~\\uff5e\\u3007 \\r\\n  \\u03be\\u3000\\u3000\\u3000\\u3000\\u3000\\u3000 \\u03be \\r\\n  \\u03be \\u03be \\u03be~\\uff5e~\\u03be \\u03be \\u03be \\r\\n\\u3000 \\u03be_\\u03be\\u03be_\\u03be\\u3000\\u03be_\\u03be\\u03be_\\u03be\\r\\nAlpaca Fin Corporation\\r\\n*/\\r\\n\\r\\npragma solidity 0.8.13;\\r\\n\\r\\ninterface IController {\\r\\n  function totalCredit(address _user) external view returns (uint256);\\r\\n\\r\\n  function usedCredit(address _user) external view returns (uint256);\\r\\n\\r\\n  function availableCredit(address _user) external view returns (uint256);\\r\\n\\r\\n  function onDeposit(address _user, uint256 _shareAmount) external;\\r\\n\\r\\n  function onWithdraw(address _user, uint256 _shareAmount) external;\\r\\n}\\r\\n\",\"keccak256\":\"0xdcd8f39506df604368de782ed7ecad1fcadd8523f76c2e8cca58b1dd21eabd5f\",\"license\":\"BUSL\"},\"contracts/interfaces/IDeltaNeutralVaultConfig02.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL\\r\\n/**\\r\\n  \\u2229~~~~\\u2229 \\r\\n  \\u03be \\uff65\\u00d7\\uff65 \\u03be \\r\\n  \\u03be\\u3000~\\u3000\\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u03be \\r\\n  \\u03be\\u3000\\u3000 \\u201c~\\uff5e~\\uff5e\\u3007 \\r\\n  \\u03be\\u3000\\u3000\\u3000\\u3000\\u3000\\u3000 \\u03be \\r\\n  \\u03be \\u03be \\u03be~\\uff5e~\\u03be \\u03be \\u03be \\r\\n\\u3000 \\u03be_\\u03be\\u03be_\\u03be\\u3000\\u03be_\\u03be\\u03be_\\u03be\\r\\nAlpaca Fin Corporation\\r\\n*/\\r\\n\\r\\npragma solidity 0.8.13;\\r\\n\\r\\ninterface IDeltaNeutralVaultConfig02 {\\r\\n  function getWrappedNativeAddr() external view returns (address);\\r\\n\\r\\n  function getWNativeRelayer() external view returns (address);\\r\\n\\r\\n  function rebalanceFactor() external view returns (uint256);\\r\\n\\r\\n  function positionValueTolerance() external view returns (uint256);\\r\\n\\r\\n  function debtRatioTolerance() external view returns (uint256);\\r\\n\\r\\n  /// @dev Return if the caller is whitelisted.\\r\\n  function whitelistedCallers(address _caller) external view returns (bool);\\r\\n\\r\\n  /// @dev Return if the caller is whitelisted.\\r\\n  function whitelistedRebalancers(address _caller) external view returns (bool);\\r\\n\\r\\n  /// @dev Return if the caller is exempted from fee.\\r\\n  function feeExemptedCallers(address _caller) external returns (bool);\\r\\n\\r\\n  /// @dev Get fairlaunch address.\\r\\n  function fairLaunchAddr() external view returns (address);\\r\\n\\r\\n  /// @dev Return the deposit fee treasury.\\r\\n  function depositFeeTreasury() external view returns (address);\\r\\n\\r\\n  /// @dev Get deposit fee.\\r\\n  function depositFeeBps() external view returns (uint256);\\r\\n\\r\\n  /// @dev Return the withdrawl fee treasury.\\r\\n  function withdrawalFeeTreasury() external view returns (address);\\r\\n\\r\\n  /// @dev Get withdrawal fee.\\r\\n  function withdrawalFeeBps() external returns (uint256);\\r\\n\\r\\n  /// @dev Return management fee treasury\\r\\n  function managementFeeTreasury() external view returns (address);\\r\\n\\r\\n  /// @dev Return management fee per sec.\\r\\n  function managementFeePerSec() external view returns (uint256);\\r\\n\\r\\n  /// @dev Get leverage level.\\r\\n  function leverageLevel() external view returns (uint8);\\r\\n\\r\\n  /// @dev Return if the caller is whitelisted.\\r\\n  function whitelistedReinvestors(address _caller) external view returns (bool);\\r\\n\\r\\n  /// @dev Return ALPACA reinvest fee treasury.\\r\\n  function alpacaReinvestFeeTreasury() external view returns (address);\\r\\n\\r\\n  /// @dev Return alpaca bounty bps.\\r\\n  function alpacaBountyBps() external view returns (uint256);\\r\\n\\r\\n  /// @dev Return ALPACA beneficiary address.\\r\\n  function alpacaBeneficiary() external view returns (address);\\r\\n\\r\\n  /// @dev Return ALPACA beneficiary bps.\\r\\n  function alpacaBeneficiaryBps() external view returns (uint256);\\r\\n\\r\\n  /// @dev Return if delta neutral vault position value acceptable.\\r\\n  function isVaultSizeAcceptable(uint256 _totalPositionValue) external view returns (bool);\\r\\n\\r\\n  /// @dev Return swap router\\r\\n  function getSwapRouter() external view returns (address);\\r\\n\\r\\n  /// @dev Return reinvest path\\r\\n  function getReinvestPath() external view returns (address[] memory);\\r\\n\\r\\n  /// @dev Return controller address\\r\\n  function controller() external view returns (address);\\r\\n\\r\\n  /// @dev Set a new controller\\r\\n  function setController(address _controller) external;\\r\\n\\r\\n  /// @dev Return deposit executor\\r\\n  function depositExecutor() external view returns (address);\\r\\n\\r\\n  /// @dev Return withdraw executor\\r\\n  function withdrawExecutor() external view returns (address);\\r\\n\\r\\n  /// @dev Return rebalance executor\\r\\n  function rebalanceExecutor() external view returns (address);\\r\\n\\r\\n  /// @dev Return reinvest executor\\r\\n  function reinvestExecutor() external view returns (address);\\r\\n\\r\\n  /// @dev Return if caller is executor.\\r\\n  function isExecutor(address _caller) external view returns (bool);\\r\\n\\r\\n  /// @dev Return Partial close minimize strategy address\\r\\n  function partialCloseMinimizeStrategy() external view returns (address);\\r\\n\\r\\n  /// @dev Return Stable add two side strategy address\\r\\n  function stableAddTwoSideStrategy() external view returns (address);\\r\\n\\r\\n  /// @dev Return Asset add two side strategy address\\r\\n  function assetAddTwoSideStrategy() external view returns (address);\\r\\n\\r\\n  /// @dev Return swap fee\\r\\n  function swapFee() external view returns (uint256);\\r\\n\\r\\n  /// @dev Return swap fee denom\\r\\n  function swapFeeDenom() external view returns (uint256);\\r\\n}\\r\\n\",\"keccak256\":\"0x14fc39a7a0d75c584d2a6f50ae5a084dd84d30b988b5c288c6b99a543a444638\",\"license\":\"BUSL\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061218d806100206000396000f3fe608060405234801561001057600080fd5b506004361061038e5760003560e01c806379d37981116101de578063d1783fa81161010f578063ef3bac5e116100ad578063f77c47911161007c578063f77c4791146107a4578063f9bfd907146107b7578063fe865db9146107c0578063ffc97ce9146107d357600080fd5b8063ef3bac5e14610760578063f2fde38b14610773578063f52c676414610786578063f679eda11461078f57600080fd5b8063debfda30116100e9578063debfda3014610708578063e592c5fa1461071b578063e6abb8bd1461073a578063eea997871461074d57600080fd5b8063d1783fa8146106cf578063d4f3949a146106e2578063d77ab72d146106f557600080fd5b80639e1b8fa21161017c578063b192362a11610156578063b192362a14610688578063b8e0926014610691578063b9059d73146106a4578063bed65bae146106b757600080fd5b80639e1b8fa214610659578063a361f4041461066c578063ab8798271461067f57600080fd5b80638ed5bb92116101b85780638ed5bb921461061757806391ba87d81461062a57806392eefe9b1461063d578063956c9da01461065057600080fd5b806379d37981146105e05780638c8a4b58146105f35780638da5cb5b1461060657600080fd5b80634f40e368116102c35780636155501b11610261578063698d92cb11610230578063698d92cb1461059f5780636a5bf606146105b2578063715018a6146105c5578063725c9c49146105cd57600080fd5b80636155501b14610567578063629694671461057a57806364c657051461058357806364facdd51461059657600080fd5b806358d4c4ea1161029d57806358d4c4ea1461051b578063595d4ece1461052e5780635c23aed61461054157806360bdf9e51461055457600080fd5b80634f40e368146104e657806354cf2aeb1461050957806356fc97a01461051257600080fd5b80632ce2a21811610330578063412736571161030a57806341273657146104a4578063429e0971146104b757806345b61b00146104c057806349b2045c146104d357600080fd5b80632ce2a2181461045b578063358240611461046e5780633924f2331461048157600080fd5b806312440ccb1161036c57806312440ccb146103ef5780631bb8c61d146104225780631c425a4514610435578063235ec73d1461044857600080fd5b806304336bb3146103935780630573f19c146103af5780631218cf18146103da575b600080fd5b61039c606f5481565b6040519081526020015b60405180910390f35b6086546103c2906001600160a01b031681565b6040516001600160a01b0390911681526020016103a6565b6103ed6103e8366004611ce3565b6107f6565b005b6104126103fd366004611d0d565b60786020526000908152604090205460ff1681565b60405190151581526020016103a6565b6103ed610430366004611d7b565b6108cc565b6081546103c2906001600160a01b031681565b607f546103c2906001600160a01b031681565b6103ed610469366004611d7b565b610a00565b61041261047c366004611dd7565b610b2e565b61041261048f366004611d0d565b60776020526000908152604090205460ff1681565b6103ed6104b2366004611d0d565b610b4a565b61039c60835481565b6070546103c2906001600160a01b031681565b6084546103c2906001600160a01b031681565b6104126104f4366004611d0d565b60766020526000908152604090205460ff1681565b61039c60825481565b61039c60685481565b607e546103c2906001600160a01b031681565b6079546103c2906001600160a01b031681565b6067546103c2906001600160a01b031681565b6103ed610562366004611dd7565b610c10565b6103ed610575366004611df0565b610c8f565b61039c60695481565b6103ed610591366004611e32565b610d9f565b61039c606b5481565b606e546103c2906001600160a01b031681565b6103ed6105c0366004611ed7565b610e72565b6103ed610efc565b6073546103c2906001600160a01b031681565b6085546103c2906001600160a01b031681565b6103ed610601366004611ef9565b610f50565b6033546001600160a01b03166103c2565b6103c2610625366004611dd7565b611046565b6103ed610638366004611d7b565b611070565b6103ed61064b366004611d0d565b61119e565b61039c607a5481565b6103ed610667366004611d7b565b6112a0565b607b546103c2906001600160a01b031681565b61039c606d5481565b61039c60715481565b6103ed61069f366004611f58565b6113ce565b6103ed6106b2366004611ce3565b6114b1565b6072546103c29061010090046001600160a01b031681565b6066546103c2906001600160a01b031681565b6103ed6106f0366004611fac565b61157a565b6080546103c2906001600160a01b031681565b610412610716366004611d0d565b611648565b6072546107289060ff1681565b60405160ff90911681526020016103a6565b6103ed610748366004611fef565b6116aa565b606c546103c2906001600160a01b031681565b6065546103c2906001600160a01b031681565b6103ed610781366004611d0d565b61181d565b61039c607c5481565b6107976118ed565b6040516103a6919061204e565b607d546103c2906001600160a01b031681565b61039c606a5481565b6103ed6107ce36600461209b565b61194f565b6104126107e1366004611d0d565b60756020526000908152604090205460ff1681565b6033546001600160a01b031633146108435760405162461bcd60e51b8152602060048201819052602482015260008051602061216183398151915260448201526064015b60405180910390fd5b6109c481111561086957604051632b14f14760e11b81526004810182905260240161083a565b607980546001600160a01b0319166001600160a01b038416908117909155607a829055604080519182526020820183905233917f07a990b3304df1347b430697979619a7a4c80cb4bd939e73ced1f7ca6101d6f691015b60405180910390a25050565b6033546001600160a01b031633146109145760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa578160756000868685818110610936576109366120be565b905060200201602081019061094b9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110610985576109856120be565b905060200201602081019061099a9190611d0d565b6001600160a01b0316336001600160a01b03167f6954b3b4020bd8480cd160fffd549537b617f20a8074ce45b2dee80cab6ef8e2846040516109e0911515815260200190565b60405180910390a3806109f2816120d4565b915050610917565b50505050565b6033546001600160a01b03163314610a485760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa578160776000868685818110610a6a57610a6a6120be565b9050602002016020810190610a7f9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110610ab957610ab96120be565b9050602002016020810190610ace9190611d0d565b6001600160a01b0316336001600160a01b03167fafed47930189ea124b8d808450ba0e6c685037de026cb6e56907751f1eef52dc84604051610b14911515815260200190565b60405180910390a380610b26816120d4565b915050610a4b565b6000606854821115610b4257506000919050565b506001919050565b6033546001600160a01b03163314610b925760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6001600160a01b038116610bb957604051634cd6613760e11b815260040160405180910390fd5b607380546001600160a01b0319166001600160a01b03831690811790915560405190815233907f05647eff4880e5135952763bda009997b9c8669cac9292ef87f28badca4f32a6906020015b60405180910390a250565b6033546001600160a01b03163314610c585760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b606881905560405181815233907fa604cbdca7ee706aafea3c555e0385946d7b121453a1b0ac8b3cd58c63014f0790602001610c05565b6033546001600160a01b03163314610cd75760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6002811015610cf957604051639be12e7760e01b815260040160405180910390fd5b60725461010090046001600160a01b03168282600081610d1b57610d1b6120be565b9050602002016020810190610d309190611d0d565b6001600160a01b031614610d5757604051630c3e3d8560e31b815260040160405180910390fd5b610d6360748383611c54565b50336001600160a01b03167fb67c241a52658f85ec5362073fc9a0909e07aad7e75f92291c35f910c57f808683836040516108c09291906120fb565b6000610dab6001611a00565b90508015610dc3576000805461ff0019166101001790555b610dcb611b1b565b607280547fffffffffffffffffffffff0000000000000000000000000000000000000000ff166101006001600160a01b03851602179055610e11856000858188816116aa565b610e1f8b8b8b8b8b8b610f50565b8015610e65576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b5050505050505050505050565b6033546001600160a01b03163314610eba5760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60828290556083819055604080518381526020810183905233917f377241d1cd344fbe941f17d99a8ea4b7c81990ec2da5f6d7ccfe19b9b1676f8f91016108c0565b6033546001600160a01b03163314610f445760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b610f4e6000611b8e565b565b6033546001600160a01b03163314610f985760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b606580546001600160a01b038881166001600160a01b03199283168117909355606680548983169084168117909155606780549289169290931682179092556069869055606a859055606b84905560408051938452602084019290925290820152606081018490526080810183905260a0810182905233907fd4ca73c532248c12fc93b1dd748b3954751548cac9a9565697a3849bf7dd3b4c9060c0015b60405180910390a2505050505050565b6074818154811061105657600080fd5b6000918252602090912001546001600160a01b0316905081565b6033546001600160a01b031633146110b85760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa5781607860008686858181106110da576110da6120be565b90506020020160208101906110ef9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110611129576111296120be565b905060200201602081019061113e9190611d0d565b6001600160a01b0316336001600160a01b03167f9e48685292272e85fa3be83f07779af7794d29a6efb26b5f834bfb48e220d37084604051611184911515815260200190565b60405180910390a380611196816120d4565b9150506110bb565b6033546001600160a01b031633146111e65760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b604051633c88345b60e21b8152600060048201526001600160a01b0382169063f220d16c90602401602060405180830381865afa15801561122b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061124f9190612147565b50607d80546001600160a01b0319166001600160a01b03831690811790915560405190815233907f1d38dced3210495ad7eff4825fd4dd5cc0e44c11c98519840691e5391c78cd1590602001610c05565b6033546001600160a01b031633146112e85760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa57816076600086868581811061130a5761130a6120be565b905060200201602081019061131f9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110611359576113596120be565b905060200201602081019061136e9190611d0d565b6001600160a01b0316336001600160a01b03167fa36d60ecff7c14072a077a9b05c8c98cfdfbf7b5f8e354a071764c27e5330855846040516113b4911515815260200190565b60405180910390a3806113c6816120d4565b9150506112eb565b6033546001600160a01b031633146114165760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b607e80546001600160a01b038681166001600160a01b03199283168117909355607f8054878316908416811790915560808054878416908516811782556081805494881694909516841790945560408051958652602086019290925290840192909252606083015233917f11cbce6c87791f09a7c2108a3abea2993ab3de5c9ed89a0bd108618ece832b23910160405180910390a250505050565b6033546001600160a01b031633146114f95760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b61177081111561151f57604051632b14f14760e11b81526004810182905260240161083a565b607b80546001600160a01b0319166001600160a01b038416908117909155607c829055604080519182526020820183905233917f49d9e0ca3aa68af12938170e0cd7267d832389603122e97b1cc70333942b8d2191016108c0565b6033546001600160a01b031633146115c25760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b608480546001600160a01b038581166001600160a01b03199283168117909355608580548683169084168117909155608680549286169290931682179092556040805193845260208401929092529082015233907f4aaf8791c546d8d1000b9d104834f06eea9b95c08f81c36f7eee152623edf4ae9060600160405180910390a2505050565b607e546000906001600160a01b03838116911614806116745750607f546001600160a01b038381169116145b8061168c57506080546001600160a01b038381169116145b806116a457506081546001600160a01b038381169116145b92915050565b6033546001600160a01b031633146116f25760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6103e885118061170357506103e883115b80611711575063bd014d7e81115b1561174057604051634b873b2960e11b815260048101869052602481018490526044810182905260640161083a565b606c80546001600160a01b038881166001600160a01b031992831617909255606d879055606e8054878416908316179055606f85905560708054928516929091169190911790556071819055604080518681526020810185905290810182905233907fc4d5650477cd4354e9a07e898df55abe6fecec3e415531e27a8499597b462be29060600160405180910390a2604080516001600160a01b038881168252868116602083015284169181019190915233907f6ebcbf01234512b5d15e025b0aa6bd7514d7f7690b4ff5b260bea6b9aac29e0f90606001611036565b6033546001600160a01b031633146118655760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6001600160a01b0381166118e15760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f6464726573730000000000000000000000000000000000000000000000000000606482015260840161083a565b6118ea81611b8e565b50565b6060607480548060200260200160405190810160405280929190818152602001828054801561194557602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311611927575b5050505050905090565b6033546001600160a01b031633146119975760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b600360ff821610156119bc5760405163279a13c360e11b815260040160405180910390fd5b6072805460ff191660ff831690811790915560405190815233907f0162496fc30aed361442504cdd534d5911e2997e66eb97f7455486c9476c8bfb90602001610c05565b60008054610100900460ff1615611a8e578160ff166001148015611a235750303b155b611a865760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840161083a565b506000919050565b60005460ff808416911610611afc5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840161083a565b506000805460ff191660ff92909216919091179055600190565b919050565b600054610100900460ff16611b865760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b606482015260840161083a565b610f4e611be0565b603380546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b600054610100900460ff16611c4b5760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b606482015260840161083a565b610f4e33611b8e565b828054828255906000526020600020908101928215611ca7579160200282015b82811115611ca75781546001600160a01b0319166001600160a01b03843516178255602090920191600190910190611c74565b50611cb3929150611cb7565b5090565b5b80821115611cb35760008155600101611cb8565b80356001600160a01b0381168114611b1657600080fd5b60008060408385031215611cf657600080fd5b611cff83611ccc565b946020939093013593505050565b600060208284031215611d1f57600080fd5b611d2882611ccc565b9392505050565b60008083601f840112611d4157600080fd5b50813567ffffffffffffffff811115611d5957600080fd5b6020830191508360208260051b8501011115611d7457600080fd5b9250929050565b600080600060408486031215611d9057600080fd5b833567ffffffffffffffff811115611da757600080fd5b611db386828701611d2f565b90945092505060208401358015158114611dcc57600080fd5b809150509250925092565b600060208284031215611de957600080fd5b5035919050565b60008060208385031215611e0357600080fd5b823567ffffffffffffffff811115611e1a57600080fd5b611e2685828601611d2f565b90969095509350505050565b6000806000806000806000806000806101408b8d031215611e5257600080fd5b611e5b8b611ccc565b9950611e6960208c01611ccc565b9850611e7760408c01611ccc565b975060608b0135965060808b0135955060a08b01359450611e9a60c08c01611ccc565b9350611ea860e08c01611ccc565b9250611eb76101008c01611ccc565b9150611ec66101208c01611ccc565b90509295989b9194979a5092959850565b60008060408385031215611eea57600080fd5b50508035926020909101359150565b60008060008060008060c08789031215611f1257600080fd5b611f1b87611ccc565b9550611f2960208801611ccc565b9450611f3760408801611ccc565b9350606087013592506080870135915060a087013590509295509295509295565b60008060008060808587031215611f6e57600080fd5b611f7785611ccc565b9350611f8560208601611ccc565b9250611f9360408601611ccc565b9150611fa160608601611ccc565b905092959194509250565b600080600060608486031215611fc157600080fd5b611fca84611ccc565b9250611fd860208501611ccc565b9150611fe660408501611ccc565b90509250925092565b60008060008060008060c0878903121561200857600080fd5b61201187611ccc565b95506020870135945061202660408801611ccc565b93506060870135925061203b60808801611ccc565b915060a087013590509295509295509295565b6020808252825182820181905260009190848201906040850190845b8181101561208f5783516001600160a01b03168352928401929184019160010161206a565b50909695505050505050565b6000602082840312156120ad57600080fd5b813560ff81168114611d2857600080fd5b634e487b7160e01b600052603260045260246000fd5b6000600182016120f457634e487b7160e01b600052601160045260246000fd5b5060010190565b60208082528181018390526000908460408401835b8681101561213c576001600160a01b0361212984611ccc565b1682529183019190830190600101612110565b509695505050505050565b60006020828403121561215957600080fd5b505191905056fe4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572a164736f6c634300080d000a",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061038e5760003560e01c806379d37981116101de578063d1783fa81161010f578063ef3bac5e116100ad578063f77c47911161007c578063f77c4791146107a4578063f9bfd907146107b7578063fe865db9146107c0578063ffc97ce9146107d357600080fd5b8063ef3bac5e14610760578063f2fde38b14610773578063f52c676414610786578063f679eda11461078f57600080fd5b8063debfda30116100e9578063debfda3014610708578063e592c5fa1461071b578063e6abb8bd1461073a578063eea997871461074d57600080fd5b8063d1783fa8146106cf578063d4f3949a146106e2578063d77ab72d146106f557600080fd5b80639e1b8fa21161017c578063b192362a11610156578063b192362a14610688578063b8e0926014610691578063b9059d73146106a4578063bed65bae146106b757600080fd5b80639e1b8fa214610659578063a361f4041461066c578063ab8798271461067f57600080fd5b80638ed5bb92116101b85780638ed5bb921461061757806391ba87d81461062a57806392eefe9b1461063d578063956c9da01461065057600080fd5b806379d37981146105e05780638c8a4b58146105f35780638da5cb5b1461060657600080fd5b80634f40e368116102c35780636155501b11610261578063698d92cb11610230578063698d92cb1461059f5780636a5bf606146105b2578063715018a6146105c5578063725c9c49146105cd57600080fd5b80636155501b14610567578063629694671461057a57806364c657051461058357806364facdd51461059657600080fd5b806358d4c4ea1161029d57806358d4c4ea1461051b578063595d4ece1461052e5780635c23aed61461054157806360bdf9e51461055457600080fd5b80634f40e368146104e657806354cf2aeb1461050957806356fc97a01461051257600080fd5b80632ce2a21811610330578063412736571161030a57806341273657146104a4578063429e0971146104b757806345b61b00146104c057806349b2045c146104d357600080fd5b80632ce2a2181461045b578063358240611461046e5780633924f2331461048157600080fd5b806312440ccb1161036c57806312440ccb146103ef5780631bb8c61d146104225780631c425a4514610435578063235ec73d1461044857600080fd5b806304336bb3146103935780630573f19c146103af5780631218cf18146103da575b600080fd5b61039c606f5481565b6040519081526020015b60405180910390f35b6086546103c2906001600160a01b031681565b6040516001600160a01b0390911681526020016103a6565b6103ed6103e8366004611ce3565b6107f6565b005b6104126103fd366004611d0d565b60786020526000908152604090205460ff1681565b60405190151581526020016103a6565b6103ed610430366004611d7b565b6108cc565b6081546103c2906001600160a01b031681565b607f546103c2906001600160a01b031681565b6103ed610469366004611d7b565b610a00565b61041261047c366004611dd7565b610b2e565b61041261048f366004611d0d565b60776020526000908152604090205460ff1681565b6103ed6104b2366004611d0d565b610b4a565b61039c60835481565b6070546103c2906001600160a01b031681565b6084546103c2906001600160a01b031681565b6104126104f4366004611d0d565b60766020526000908152604090205460ff1681565b61039c60825481565b61039c60685481565b607e546103c2906001600160a01b031681565b6079546103c2906001600160a01b031681565b6067546103c2906001600160a01b031681565b6103ed610562366004611dd7565b610c10565b6103ed610575366004611df0565b610c8f565b61039c60695481565b6103ed610591366004611e32565b610d9f565b61039c606b5481565b606e546103c2906001600160a01b031681565b6103ed6105c0366004611ed7565b610e72565b6103ed610efc565b6073546103c2906001600160a01b031681565b6085546103c2906001600160a01b031681565b6103ed610601366004611ef9565b610f50565b6033546001600160a01b03166103c2565b6103c2610625366004611dd7565b611046565b6103ed610638366004611d7b565b611070565b6103ed61064b366004611d0d565b61119e565b61039c607a5481565b6103ed610667366004611d7b565b6112a0565b607b546103c2906001600160a01b031681565b61039c606d5481565b61039c60715481565b6103ed61069f366004611f58565b6113ce565b6103ed6106b2366004611ce3565b6114b1565b6072546103c29061010090046001600160a01b031681565b6066546103c2906001600160a01b031681565b6103ed6106f0366004611fac565b61157a565b6080546103c2906001600160a01b031681565b610412610716366004611d0d565b611648565b6072546107289060ff1681565b60405160ff90911681526020016103a6565b6103ed610748366004611fef565b6116aa565b606c546103c2906001600160a01b031681565b6065546103c2906001600160a01b031681565b6103ed610781366004611d0d565b61181d565b61039c607c5481565b6107976118ed565b6040516103a6919061204e565b607d546103c2906001600160a01b031681565b61039c606a5481565b6103ed6107ce36600461209b565b61194f565b6104126107e1366004611d0d565b60756020526000908152604090205460ff1681565b6033546001600160a01b031633146108435760405162461bcd60e51b8152602060048201819052602482015260008051602061216183398151915260448201526064015b60405180910390fd5b6109c481111561086957604051632b14f14760e11b81526004810182905260240161083a565b607980546001600160a01b0319166001600160a01b038416908117909155607a829055604080519182526020820183905233917f07a990b3304df1347b430697979619a7a4c80cb4bd939e73ced1f7ca6101d6f691015b60405180910390a25050565b6033546001600160a01b031633146109145760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa578160756000868685818110610936576109366120be565b905060200201602081019061094b9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110610985576109856120be565b905060200201602081019061099a9190611d0d565b6001600160a01b0316336001600160a01b03167f6954b3b4020bd8480cd160fffd549537b617f20a8074ce45b2dee80cab6ef8e2846040516109e0911515815260200190565b60405180910390a3806109f2816120d4565b915050610917565b50505050565b6033546001600160a01b03163314610a485760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa578160776000868685818110610a6a57610a6a6120be565b9050602002016020810190610a7f9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110610ab957610ab96120be565b9050602002016020810190610ace9190611d0d565b6001600160a01b0316336001600160a01b03167fafed47930189ea124b8d808450ba0e6c685037de026cb6e56907751f1eef52dc84604051610b14911515815260200190565b60405180910390a380610b26816120d4565b915050610a4b565b6000606854821115610b4257506000919050565b506001919050565b6033546001600160a01b03163314610b925760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6001600160a01b038116610bb957604051634cd6613760e11b815260040160405180910390fd5b607380546001600160a01b0319166001600160a01b03831690811790915560405190815233907f05647eff4880e5135952763bda009997b9c8669cac9292ef87f28badca4f32a6906020015b60405180910390a250565b6033546001600160a01b03163314610c585760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b606881905560405181815233907fa604cbdca7ee706aafea3c555e0385946d7b121453a1b0ac8b3cd58c63014f0790602001610c05565b6033546001600160a01b03163314610cd75760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6002811015610cf957604051639be12e7760e01b815260040160405180910390fd5b60725461010090046001600160a01b03168282600081610d1b57610d1b6120be565b9050602002016020810190610d309190611d0d565b6001600160a01b031614610d5757604051630c3e3d8560e31b815260040160405180910390fd5b610d6360748383611c54565b50336001600160a01b03167fb67c241a52658f85ec5362073fc9a0909e07aad7e75f92291c35f910c57f808683836040516108c09291906120fb565b6000610dab6001611a00565b90508015610dc3576000805461ff0019166101001790555b610dcb611b1b565b607280547fffffffffffffffffffffff0000000000000000000000000000000000000000ff166101006001600160a01b03851602179055610e11856000858188816116aa565b610e1f8b8b8b8b8b8b610f50565b8015610e65576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b5050505050505050505050565b6033546001600160a01b03163314610eba5760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60828290556083819055604080518381526020810183905233917f377241d1cd344fbe941f17d99a8ea4b7c81990ec2da5f6d7ccfe19b9b1676f8f91016108c0565b6033546001600160a01b03163314610f445760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b610f4e6000611b8e565b565b6033546001600160a01b03163314610f985760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b606580546001600160a01b038881166001600160a01b03199283168117909355606680548983169084168117909155606780549289169290931682179092556069869055606a859055606b84905560408051938452602084019290925290820152606081018490526080810183905260a0810182905233907fd4ca73c532248c12fc93b1dd748b3954751548cac9a9565697a3849bf7dd3b4c9060c0015b60405180910390a2505050505050565b6074818154811061105657600080fd5b6000918252602090912001546001600160a01b0316905081565b6033546001600160a01b031633146110b85760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa5781607860008686858181106110da576110da6120be565b90506020020160208101906110ef9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110611129576111296120be565b905060200201602081019061113e9190611d0d565b6001600160a01b0316336001600160a01b03167f9e48685292272e85fa3be83f07779af7794d29a6efb26b5f834bfb48e220d37084604051611184911515815260200190565b60405180910390a380611196816120d4565b9150506110bb565b6033546001600160a01b031633146111e65760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b604051633c88345b60e21b8152600060048201526001600160a01b0382169063f220d16c90602401602060405180830381865afa15801561122b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061124f9190612147565b50607d80546001600160a01b0319166001600160a01b03831690811790915560405190815233907f1d38dced3210495ad7eff4825fd4dd5cc0e44c11c98519840691e5391c78cd1590602001610c05565b6033546001600160a01b031633146112e85760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b60005b828110156109fa57816076600086868581811061130a5761130a6120be565b905060200201602081019061131f9190611d0d565b6001600160a01b031681526020810191909152604001600020805460ff1916911515919091179055838382818110611359576113596120be565b905060200201602081019061136e9190611d0d565b6001600160a01b0316336001600160a01b03167fa36d60ecff7c14072a077a9b05c8c98cfdfbf7b5f8e354a071764c27e5330855846040516113b4911515815260200190565b60405180910390a3806113c6816120d4565b9150506112eb565b6033546001600160a01b031633146114165760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b607e80546001600160a01b038681166001600160a01b03199283168117909355607f8054878316908416811790915560808054878416908516811782556081805494881694909516841790945560408051958652602086019290925290840192909252606083015233917f11cbce6c87791f09a7c2108a3abea2993ab3de5c9ed89a0bd108618ece832b23910160405180910390a250505050565b6033546001600160a01b031633146114f95760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b61177081111561151f57604051632b14f14760e11b81526004810182905260240161083a565b607b80546001600160a01b0319166001600160a01b038416908117909155607c829055604080519182526020820183905233917f49d9e0ca3aa68af12938170e0cd7267d832389603122e97b1cc70333942b8d2191016108c0565b6033546001600160a01b031633146115c25760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b608480546001600160a01b038581166001600160a01b03199283168117909355608580548683169084168117909155608680549286169290931682179092556040805193845260208401929092529082015233907f4aaf8791c546d8d1000b9d104834f06eea9b95c08f81c36f7eee152623edf4ae9060600160405180910390a2505050565b607e546000906001600160a01b03838116911614806116745750607f546001600160a01b038381169116145b8061168c57506080546001600160a01b038381169116145b806116a457506081546001600160a01b038381169116145b92915050565b6033546001600160a01b031633146116f25760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6103e885118061170357506103e883115b80611711575063bd014d7e81115b1561174057604051634b873b2960e11b815260048101869052602481018490526044810182905260640161083a565b606c80546001600160a01b038881166001600160a01b031992831617909255606d879055606e8054878416908316179055606f85905560708054928516929091169190911790556071819055604080518681526020810185905290810182905233907fc4d5650477cd4354e9a07e898df55abe6fecec3e415531e27a8499597b462be29060600160405180910390a2604080516001600160a01b038881168252868116602083015284169181019190915233907f6ebcbf01234512b5d15e025b0aa6bd7514d7f7690b4ff5b260bea6b9aac29e0f90606001611036565b6033546001600160a01b031633146118655760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b6001600160a01b0381166118e15760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f6464726573730000000000000000000000000000000000000000000000000000606482015260840161083a565b6118ea81611b8e565b50565b6060607480548060200260200160405190810160405280929190818152602001828054801561194557602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311611927575b5050505050905090565b6033546001600160a01b031633146119975760405162461bcd60e51b81526020600482018190526024820152600080516020612161833981519152604482015260640161083a565b600360ff821610156119bc5760405163279a13c360e11b815260040160405180910390fd5b6072805460ff191660ff831690811790915560405190815233907f0162496fc30aed361442504cdd534d5911e2997e66eb97f7455486c9476c8bfb90602001610c05565b60008054610100900460ff1615611a8e578160ff166001148015611a235750303b155b611a865760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840161083a565b506000919050565b60005460ff808416911610611afc5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840161083a565b506000805460ff191660ff92909216919091179055600190565b919050565b600054610100900460ff16611b865760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b606482015260840161083a565b610f4e611be0565b603380546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b600054610100900460ff16611c4b5760405162461bcd60e51b815260206004820152602b60248201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960448201526a6e697469616c697a696e6760a81b606482015260840161083a565b610f4e33611b8e565b828054828255906000526020600020908101928215611ca7579160200282015b82811115611ca75781546001600160a01b0319166001600160a01b03843516178255602090920191600190910190611c74565b50611cb3929150611cb7565b5090565b5b80821115611cb35760008155600101611cb8565b80356001600160a01b0381168114611b1657600080fd5b60008060408385031215611cf657600080fd5b611cff83611ccc565b946020939093013593505050565b600060208284031215611d1f57600080fd5b611d2882611ccc565b9392505050565b60008083601f840112611d4157600080fd5b50813567ffffffffffffffff811115611d5957600080fd5b6020830191508360208260051b8501011115611d7457600080fd5b9250929050565b600080600060408486031215611d9057600080fd5b833567ffffffffffffffff811115611da757600080fd5b611db386828701611d2f565b90945092505060208401358015158114611dcc57600080fd5b809150509250925092565b600060208284031215611de957600080fd5b5035919050565b60008060208385031215611e0357600080fd5b823567ffffffffffffffff811115611e1a57600080fd5b611e2685828601611d2f565b90969095509350505050565b6000806000806000806000806000806101408b8d031215611e5257600080fd5b611e5b8b611ccc565b9950611e6960208c01611ccc565b9850611e7760408c01611ccc565b975060608b0135965060808b0135955060a08b01359450611e9a60c08c01611ccc565b9350611ea860e08c01611ccc565b9250611eb76101008c01611ccc565b9150611ec66101208c01611ccc565b90509295989b9194979a5092959850565b60008060408385031215611eea57600080fd5b50508035926020909101359150565b60008060008060008060c08789031215611f1257600080fd5b611f1b87611ccc565b9550611f2960208801611ccc565b9450611f3760408801611ccc565b9350606087013592506080870135915060a087013590509295509295509295565b60008060008060808587031215611f6e57600080fd5b611f7785611ccc565b9350611f8560208601611ccc565b9250611f9360408601611ccc565b9150611fa160608601611ccc565b905092959194509250565b600080600060608486031215611fc157600080fd5b611fca84611ccc565b9250611fd860208501611ccc565b9150611fe660408501611ccc565b90509250925092565b60008060008060008060c0878903121561200857600080fd5b61201187611ccc565b95506020870135945061202660408801611ccc565b93506060870135925061203b60808801611ccc565b915060a087013590509295509295509295565b6020808252825182820181905260009190848201906040850190845b8181101561208f5783516001600160a01b03168352928401929184019160010161206a565b50909695505050505050565b6000602082840312156120ad57600080fd5b813560ff81168114611d2857600080fd5b634e487b7160e01b600052603260045260246000fd5b6000600182016120f457634e487b7160e01b600052601160045260246000fd5b5060010190565b60208082528181018390526000908460408401835b8681101561213c576001600160a01b0361212984611ccc565b1682529183019190830190600101612110565b509695505050505050565b60006020828403121561215957600080fd5b505191905056fe4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572a164736f6c634300080d000a",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getReinvestPath()": {
+        "details": "Get the reinvest path."
+      },
+      "isExecutor(address)": {
+        "params": {
+          "_caller": "caller."
+        }
+      },
+      "isVaultSizeAcceptable(uint256)": {
+        "params": {
+          "_totalPositionValue": "new vault position value."
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "setAlpacaBeneficiaryConfig(address,uint256)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_newAlpacaBeneficiary": "The new address to received ALPACA reinvest fee",
+          "_newAlpacaBeneficiaryBps": "Fee from reinvesting ALPACA to positions."
+        }
+      },
+      "setAlpacaBountyConfig(address,uint256)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_newAlpacaBountyBps": "Fee from reinvesting ALPACA to positions.",
+          "_newAlpacaReinvestFeeTreasury": "The new address to received ALPACA reinvest fee"
+        }
+      },
+      "setController(address)": {
+        "details": "Set a new controller"
+      },
+      "setFeeExemptedCallers(address[],bool)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_callers": "addresses to be exempted.",
+          "_ok": "The new ok flag for callers."
+        }
+      },
+      "setFees(address,uint256,address,uint256,address,uint256)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_newDepositFeeBps": "Fee when user deposit to delta neutral vault.",
+          "_newManagementFeePerSec": "Mangement Fee per second.",
+          "_newWithdrawalFeeBps": "Fee when user deposit to delta neutral vault."
+        }
+      },
+      "setLeverageLevel(uint8)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_newLeverageLevel": "The new leverage level to be set. Must be >= 3"
+        }
+      },
+      "setReinvestPath(address[])": {
+        "details": "Set the reinvest path.",
+        "params": {
+          "_reinvestPath": "- The reinvest path to update."
+        }
+      },
+      "setSwapRouter(address)": {
+        "details": "Set the reinvest configuration.",
+        "params": {
+          "_swapRouter": "- The router address to update."
+        }
+      },
+      "setValueLimit(uint256)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_maxVaultPositionValue": "Maximum vault size position value."
+        }
+      },
+      "setWhitelistedCallers(address[],bool)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_callers": "addresses to be whitelisted.",
+          "_ok": "The new ok flag for callers."
+        }
+      },
+      "setWhitelistedRebalancer(address[],bool)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_callers": "addresses to be whitelisted.",
+          "_ok": "The new ok flag for callers."
+        }
+      },
+      "setwhitelistedReinvestors(address[],bool)": {
+        "details": "Must only be called by owner.",
+        "params": {
+          "_callers": "addresses to be whitelisted.",
+          "_ok": "The new ok flag for callers."
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "stateVariables": {
+      "alpacaBeneficiary": {
+        "details": "Return ALPACA beneficiary address."
+      },
+      "alpacaBeneficiaryBps": {
+        "details": "Return ALPACA beneficiary bps."
+      },
+      "alpacaBountyBps": {
+        "details": "Return alpaca bounty bps."
+      },
+      "alpacaReinvestFeeTreasury": {
+        "details": "Return ALPACA reinvest fee treasury."
+      },
+      "assetAddTwoSideStrategy": {
+        "details": "Return Asset add two side strategy address"
+      },
+      "controller": {
+        "details": "Return controller address"
+      },
+      "depositFeeBps": {
+        "details": "Get deposit fee."
+      },
+      "depositFeeTreasury": {
+        "details": "Return the deposit fee treasury."
+      },
+      "fairLaunchAddr": {
+        "details": "Get fairlaunch address."
+      },
+      "feeExemptedCallers": {
+        "details": "Return if the caller is exempted from fee."
+      },
+      "getSwapRouter": {
+        "details": "Return swap router"
+      },
+      "leverageLevel": {
+        "details": "Get leverage level."
+      },
+      "managementFeePerSec": {
+        "details": "Return management fee per sec."
+      },
+      "managementFeeTreasury": {
+        "details": "Return management fee treasury"
+      },
+      "rebalanceExecutor": {
+        "details": "Return rebalance executor"
+      },
+      "reinvestExecutor": {
+        "details": "Return reinvest executor"
+      },
+      "stableAddTwoSideStrategy": {
+        "details": "Return Stable add two side strategy address"
+      },
+      "swapFeeDenom": {
+        "details": "Return swap fee denom"
+      },
+      "whitelistedCallers": {
+        "details": "Return if the caller is whitelisted."
+      },
+      "whitelistedRebalancers": {
+        "details": "Return if the caller is whitelisted."
+      },
+      "whitelistedReinvestors": {
+        "details": "Return if the caller is whitelisted."
+      },
+      "withdrawExecutor": {
+        "details": "Return withdraw executor"
+      },
+      "withdrawalFeeBps": {
+        "details": "Get withdrawal fee."
+      },
+      "withdrawalFeeTreasury": {
+        "details": "Return the withdrawl fee treasury."
+      }
+    },
+    "title": "DeltaNeutralVaultConfig02 - A place where you can find all delta neutral vault config",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "depositExecutor()": {
+        "notice": "Executor"
+      },
+      "isExecutor(address)": {
+        "notice": "Return if caller is executor."
+      },
+      "isVaultSizeAcceptable(uint256)": {
+        "notice": "Return if vault can accept new position value."
+      },
+      "partialCloseMinimizeStrategy()": {
+        "notice": "Strategies"
+      },
+      "setAlpacaBeneficiaryConfig(address,uint256)": {
+        "notice": "Set alpacaBeneficiaryBps."
+      },
+      "setAlpacaBountyConfig(address,uint256)": {
+        "notice": "Set alpacaBountyBps."
+      },
+      "setFeeExemptedCallers(address[],bool)": {
+        "notice": "Set exempted fee callers."
+      },
+      "setFees(address,uint256,address,uint256,address,uint256)": {
+        "notice": "Set fees."
+      },
+      "setLeverageLevel(uint8)": {
+        "notice": "Set leverage level."
+      },
+      "setValueLimit(uint256)": {
+        "notice": "Set position value limit."
+      },
+      "setWhitelistedCallers(address[],bool)": {
+        "notice": "Set whitelisted callers."
+      },
+      "setWhitelistedRebalancer(address[],bool)": {
+        "notice": "Set whitelisted rebalancers."
+      },
+      "setwhitelistedReinvestors(address[],bool)": {
+        "notice": "Set whitelisted reinvestors."
+      },
+      "swapFee()": {
+        "notice": "swap config"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 130,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint8"
+      },
+      {
+        "astId": 133,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 1546,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_uint256)50_storage"
+      },
+      {
+        "astId": 10,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "51",
+        "type": "t_address"
+      },
+      {
+        "astId": 122,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "52",
+        "type": "t_array(t_uint256)49_storage"
+      },
+      {
+        "astId": 4850,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "getWrappedNativeAddr",
+        "offset": 0,
+        "slot": "101",
+        "type": "t_address"
+      },
+      {
+        "astId": 4853,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "getWNativeRelayer",
+        "offset": 0,
+        "slot": "102",
+        "type": "t_address"
+      },
+      {
+        "astId": 4855,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "fairLaunchAddr",
+        "offset": 0,
+        "slot": "103",
+        "type": "t_address"
+      },
+      {
+        "astId": 4857,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "maxVaultPositionValue",
+        "offset": 0,
+        "slot": "104",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4860,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "rebalanceFactor",
+        "offset": 0,
+        "slot": "105",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4863,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "positionValueTolerance",
+        "offset": 0,
+        "slot": "106",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4866,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "debtRatioTolerance",
+        "offset": 0,
+        "slot": "107",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4868,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "depositFeeTreasury",
+        "offset": 0,
+        "slot": "108",
+        "type": "t_address"
+      },
+      {
+        "astId": 4871,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "depositFeeBps",
+        "offset": 0,
+        "slot": "109",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4873,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "withdrawalFeeTreasury",
+        "offset": 0,
+        "slot": "110",
+        "type": "t_address"
+      },
+      {
+        "astId": 4876,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "withdrawalFeeBps",
+        "offset": 0,
+        "slot": "111",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4878,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "managementFeeTreasury",
+        "offset": 0,
+        "slot": "112",
+        "type": "t_address"
+      },
+      {
+        "astId": 4881,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "managementFeePerSec",
+        "offset": 0,
+        "slot": "113",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4884,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "leverageLevel",
+        "offset": 0,
+        "slot": "114",
+        "type": "t_uint8"
+      },
+      {
+        "astId": 4886,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "alpacaToken",
+        "offset": 1,
+        "slot": "114",
+        "type": "t_address"
+      },
+      {
+        "astId": 4888,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "getSwapRouter",
+        "offset": 0,
+        "slot": "115",
+        "type": "t_address"
+      },
+      {
+        "astId": 4891,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "reinvestPath",
+        "offset": 0,
+        "slot": "116",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 4895,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "whitelistedCallers",
+        "offset": 0,
+        "slot": "117",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 4899,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "whitelistedRebalancers",
+        "offset": 0,
+        "slot": "118",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 4903,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "feeExemptedCallers",
+        "offset": 0,
+        "slot": "119",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 4907,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "whitelistedReinvestors",
+        "offset": 0,
+        "slot": "120",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 4909,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "alpacaReinvestFeeTreasury",
+        "offset": 0,
+        "slot": "121",
+        "type": "t_address"
+      },
+      {
+        "astId": 4911,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "alpacaBountyBps",
+        "offset": 0,
+        "slot": "122",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4913,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "alpacaBeneficiary",
+        "offset": 0,
+        "slot": "123",
+        "type": "t_address"
+      },
+      {
+        "astId": 4915,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "alpacaBeneficiaryBps",
+        "offset": 0,
+        "slot": "124",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4918,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "controller",
+        "offset": 0,
+        "slot": "125",
+        "type": "t_address"
+      },
+      {
+        "astId": 4921,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "depositExecutor",
+        "offset": 0,
+        "slot": "126",
+        "type": "t_address"
+      },
+      {
+        "astId": 4923,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "withdrawExecutor",
+        "offset": 0,
+        "slot": "127",
+        "type": "t_address"
+      },
+      {
+        "astId": 4925,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "rebalanceExecutor",
+        "offset": 0,
+        "slot": "128",
+        "type": "t_address"
+      },
+      {
+        "astId": 4927,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "reinvestExecutor",
+        "offset": 0,
+        "slot": "129",
+        "type": "t_address"
+      },
+      {
+        "astId": 4930,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "swapFee",
+        "offset": 0,
+        "slot": "130",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4932,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "swapFeeDenom",
+        "offset": 0,
+        "slot": "131",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 4935,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "partialCloseMinimizeStrategy",
+        "offset": 0,
+        "slot": "132",
+        "type": "t_address"
+      },
+      {
+        "astId": 4937,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "stableAddTwoSideStrategy",
+        "offset": 0,
+        "slot": "133",
+        "type": "t_address"
+      },
+      {
+        "astId": 4939,
+        "contract": "contracts/DeltaNeutralVaultConfig02.sol:DeltaNeutralVaultConfig02",
+        "label": "assetAddTwoSideStrategy",
+        "offset": 0,
+        "slot": "134",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_uint256)49_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[49]",
+        "numberOfBytes": "1568"
+      },
+      "t_array(t_uint256)50_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[50]",
+        "numberOfBytes": "1600"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}

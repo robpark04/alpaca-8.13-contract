@@ -1,0 +1,363 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "xALPACACreditor_Unauthorize",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "xALPACACreditor_ValueTooHigh",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "version",
+						"type": "uint8"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_oldValuePerxALPACA",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_newValuePerxALPACA",
+						"type": "uint256"
+					}
+				],
+				"name": "LogSetValuePerxALPACA",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_valueSetter",
+						"type": "address"
+					}
+				],
+				"name": "LogSetValueSetter",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getUserCredit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IxALPACA",
+						"name": "_xALPACA",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_valuePerxALPACA",
+						"type": "uint256"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newValuePerxALPACA",
+						"type": "uint256"
+					}
+				],
+				"name": "setValuePerxALPACA",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newValueSetter",
+						"type": "address"
+					}
+				],
+				"name": "setValueSetter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "valuePerxALPACA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "valueSetter",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "xALPACA",
+				"outputs": [
+					{
+						"internalType": "contract IxALPACA",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getUserCredit(address)": {
+					"params": {
+						"_user": "address of user."
+					},
+					"returns": {
+						"_0": "user's credit in USD value"
+					}
+				},
+				"initialize(address,uint256)": {
+					"params": {
+						"_valuePerxALPACA": "USD value per 1 xALPACA",
+						"_xALPACA": "xALPACA."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setValuePerxALPACA(uint256)": {
+					"params": {
+						"_newValuePerxALPACA": "new value to be set."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"title": "xALPACACreditor - Assess credit of user per xALPACA that user's holding",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getUserCredit(address)": {
+					"notice": "Get user's credit in USD value"
+				},
+				"initialize(address,uint256)": {
+					"notice": "Initialize xALPACACreditor"
+				},
+				"setValuePerxALPACA(uint256)": {
+					"notice": "Set the value per xALPACA"
+				},
+				"setValueSetter(address)": {
+					"notice": "set the value setter"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/xALPACACreditor.sol": "xALPACACreditor"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol": {
+			"keccak256": "0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://98c7bba29bcab7240cdaada7dd7cbe3529fec83314801270c46239e72a9e84d7",
+				"dweb:/ipfs/QmfHCc1KMygjXchXVwafWTkFjhbb2SQ3Cu5GzRTdV4CCCh"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6ec10894beb0f7537fba35e501fd1c5d35440e8c8f5ced1b8e57722a1d0879a8",
+				"dweb:/ipfs/Qmbc3bNmtDewTGSmrPD93Ubp8saAz8xCxsgTjSmpNTqukz"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37e4df53c8d2e3c1062c1c7b2c17366db7de03bfd2559d340ca95c588aa49c2f",
+				"dweb:/ipfs/QmQ9vsG3o4wED3FRogiSUhdzJvZSjjYFtydzXvFEJtgZk4"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c",
+				"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a"
+			]
+		},
+		"contracts/interfaces/ICreditor.sol": {
+			"keccak256": "0x5f5e9528faf0ae9dc328edc68b638867f95db583b288eb60192f60dcb0c1369e",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://1e84626e63a7e69bac1f51c3c76ab340fc88f1b02a13902cc5ebb08cec20b3bc",
+				"dweb:/ipfs/QmTaYsCrakjuobfW5JhyunCWW1KgvhANJRCh1tBjShx4AX"
+			]
+		},
+		"contracts/interfaces/IxALPACA.sol": {
+			"keccak256": "0x1c30b33f788f661ca21d9472022e5e5fceb41f69f668315f33954d6f65425362",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://9bb98390f3d407ef0fdb437f4afefa2906a5b06f0693b1cbfb8368b19b40129c",
+				"dweb:/ipfs/QmZ2wPkqhhE2qBYbgF16GNTMEZinmpwtDmxUZpeTYPntc8"
+			]
+		},
+		"contracts/xALPACACreditor.sol": {
+			"keccak256": "0x455ff74309b09dcf316a57395082cb81b9f8705a7b4f6d14aa3b8e8ce75f0715",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://3722ef3bc36cb2a1ea4731715dd9263140d9f55c2094a46e780fd8462c872df9",
+				"dweb:/ipfs/Qmc6k4hDxtVDbSCX8yfK6Q5JQsqPVoKsAAv8VTyFcdord7"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,522 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "version",
+						"type": "uint8"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract ICreditor[]",
+						"name": "_creditors",
+						"type": "address[]"
+					}
+				],
+				"name": "LogSetCreditors",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract IDeltaNeutralVault[]",
+						"name": "_vaults",
+						"type": "address[]"
+					}
+				],
+				"name": "LogSetPrivateVaults",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "availableCredit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "creditors",
+				"outputs": [
+					{
+						"internalType": "contract ICreditor",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_vault",
+						"type": "address"
+					}
+				],
+				"name": "getUserVaultShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ICreditor[]",
+						"name": "_creditors",
+						"type": "address[]"
+					},
+					{
+						"internalType": "contract IDeltaNeutralVault[]",
+						"name": "_privateVaults",
+						"type": "address[]"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_shareAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "onDeposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_shareAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "onWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "privateVaults",
+				"outputs": [
+					{
+						"internalType": "contract IDeltaNeutralVault",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ICreditor[]",
+						"name": "_newCreditors",
+						"type": "address[]"
+					}
+				],
+				"name": "setCreditors",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IDeltaNeutralVault[]",
+						"name": "_newPrivateVaults",
+						"type": "address[]"
+					}
+				],
+				"name": "setPrivateVaults",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "totalCredit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "usedCredit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userVaultShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"availableCredit(address)": {
+					"params": {
+						"_user": "address of user."
+					},
+					"returns": {
+						"_0": "_total remaining credit of this user"
+					}
+				},
+				"getUserVaultShares(address,address)": {
+					"params": {
+						"_user": "share owner",
+						"_vault": "delta vault"
+					}
+				},
+				"initialize(address[],address[])": {
+					"params": {
+						"_creditors": "list of credit sources",
+						"_privateVaults": "list of private automated vaults"
+					}
+				},
+				"onDeposit(address,uint256)": {
+					"params": {
+						"_shareAmount": "amount of automated vault's share",
+						"_user": "share owner"
+					}
+				},
+				"onWithdraw(address,uint256)": {
+					"params": {
+						"_shareAmount": "amount of automated vault's share withdrawn",
+						"_user": "share owner"
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setCreditors(address[])": {
+					"params": {
+						"_newCreditors": "list of credit sources"
+					}
+				},
+				"setPrivateVaults(address[])": {
+					"params": {
+						"_newPrivateVaults": "list of private automated vaults"
+					}
+				},
+				"totalCredit(address)": {
+					"params": {
+						"_user": "address of user."
+					},
+					"returns": {
+						"_0": "_total user's credit in USD value"
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"usedCredit(address)": {
+					"params": {
+						"_user": "address of user."
+					},
+					"returns": {
+						"_0": "_total user's used credit in USD value from depositing into private automated vaults"
+					}
+				}
+			},
+			"title": "AutomatedVaultController - Controller how much investor can invest in the private automated vault",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"availableCredit(address)": {
+					"notice": "Get availableCredit credit for this user"
+				},
+				"getUserVaultShares(address,address)": {
+					"notice": "Return share of user of given vault"
+				},
+				"initialize(address[],address[])": {
+					"notice": "Initialize Automated Vault Controller"
+				},
+				"onDeposit(address,uint256)": {
+					"notice": "record user's automated vault's share from deposit"
+				},
+				"onWithdraw(address,uint256)": {
+					"notice": "update user's automated vault's share from withdrawal"
+				},
+				"setCreditors(address[])": {
+					"notice": "set private automated vaults"
+				},
+				"setPrivateVaults(address[])": {
+					"notice": "set private automated vaults"
+				},
+				"totalCredit(address)": {
+					"notice": "Get total credit for this user"
+				},
+				"usedCredit(address)": {
+					"notice": "Get used credit for this user"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/AutomatedVaultController.sol": "AutomatedVaultController"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol": {
+			"keccak256": "0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://98c7bba29bcab7240cdaada7dd7cbe3529fec83314801270c46239e72a9e84d7",
+				"dweb:/ipfs/QmfHCc1KMygjXchXVwafWTkFjhbb2SQ3Cu5GzRTdV4CCCh"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6ec10894beb0f7537fba35e501fd1c5d35440e8c8f5ced1b8e57722a1d0879a8",
+				"dweb:/ipfs/Qmbc3bNmtDewTGSmrPD93Ubp8saAz8xCxsgTjSmpNTqukz"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37e4df53c8d2e3c1062c1c7b2c17366db7de03bfd2559d340ca95c588aa49c2f",
+				"dweb:/ipfs/QmQ9vsG3o4wED3FRogiSUhdzJvZSjjYFtydzXvFEJtgZk4"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c",
+				"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a"
+			]
+		},
+		"contracts/AutomatedVaultController.sol": {
+			"keccak256": "0x6fe0d9315f17f9ed6d0397dee7f950adea85d4e24cb424061b26569c114d9918",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://7ed4f1c151659aa58067c7fbae6c54e615ae3e45abfccb108ef0607d43b88756",
+				"dweb:/ipfs/QmPFmEZDy32eSvdA1tJDBCAeGj5FN37uZgfAAHMmN6djuv"
+			]
+		},
+		"contracts/interfaces/ICreditor.sol": {
+			"keccak256": "0x5f5e9528faf0ae9dc328edc68b638867f95db583b288eb60192f60dcb0c1369e",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://1e84626e63a7e69bac1f51c3c76ab340fc88f1b02a13902cc5ebb08cec20b3bc",
+				"dweb:/ipfs/QmTaYsCrakjuobfW5JhyunCWW1KgvhANJRCh1tBjShx4AX"
+			]
+		},
+		"contracts/interfaces/IDeltaNeutralVault.sol": {
+			"keccak256": "0xeedd6aff61bb0055264bd5ddbb4bd0fc500213d110f3b8950277758888fa32f9",
+			"license": "BUSL",
+			"urls": [
+				"bzz-raw://60d57c6587f68636cddba9f321d39068a0b4aee0c139afa25f104f8704f7439c",
+				"dweb:/ipfs/QmZVfPax2yqboy6MPktmTMgggfasfpdad7hRE3CzygJYHk"
+			]
+		}
+	},
+	"version": 1
+}
