@@ -237,6 +237,9 @@ module.exports = {
       {
         version: "0.5.16",
       },
+      {
+        version: "0.6.6",
+      },
     ],
     settings: {
       outputSelection: {
